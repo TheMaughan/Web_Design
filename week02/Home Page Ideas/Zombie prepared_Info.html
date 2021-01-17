@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+ <head> 
+  <title>Zombie Preparedness Information</title>
+   <script>
+var counter = 1;
+
+var zombieMessages = ["1. When in doubt, smash the brains in." , "2. Know your zombies! Are they the zombies in the Walking Dead, or in I am Legend? This could make ALL the difference between life and death." , "3. Get your survival kit in order! Set aside 3 quarts of water a day, iodine tablets, and three cans of food per day." , "4. If you see a zombie chillin' like a villain. Kill it." , "5. When you are feeling down. Go smash a zombie!!!" , "6. Know your weapons well! Loud and proud may not always be the wisest in close areas. But if your cover is blown, get the biggest gun you got."]
+
+var myVar = setInterval(myTimer, 8000);
+
+  function myTimer() {
+
+    var remainder = counter % zombieMessages.length;
+
+    var displayedMessage = zombieMessages[remainder];
+    document.getElementById("zombieMessages").innerHTML = displayedMessage
+
+    console.log(counter)
+    counter +=1;
+  }
+
+   </script>
+   <style>
+   body{
+  	background-image: url('nuke-time-apocalypse-image.JPG');
+  	background-blend-mode: screen;
+  	background-repeat: no-repeat;
+  	background-attachment: fixed;
+  	border-top: 20px;
+  	background-size: 100% 100%;
+}
+#Fuzzy{
+   	background-color: rgba(0,0,0,.7);
+   	width: 1200px;
+   	height: 1200px;
+   	margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: lightgreen;
+   }
+.mask {
+    background:transparent; 
+    padding:50px;
+}
+  ul{
+  	list-style-type: none;
+  	margin: 0;
+  	padding: 0;
+  	overflow: hidden;
+  	background-color: #333;
+  }
+  li {
+  	float: left;
+  }
+  li a, .dropbtn {
+  	display: inline-block;
+  	color: white;
+  	text-align: center;
+  	padding: 15px 40px;
+  	text-decoration: none;
+  }
+  li a:hover, .dropdown:hover .dropbtn{
+  	background-color: green;
+    box-shadow: 0px 0px 5px #666666 inset;
+  }
+  li:dropdown{
+  	display: inline-block;
+  }
+  .dropdown-content {
+  	display: none;
+  	position: absolute;
+  	background-color: #f9f9f9;
+  	min-width: 160px;
+  	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+  .dropdown-content a{
+  	color: black;
+  	padding: 12px 16px;
+  	text-decoration: none;
+  	display: block;
+  	text-align: left;
+  }
+  .dropdown-content a:hover {background-color: #f1f1f1}
+
+  .dropdown:hover .dropdown-content {
+  	display: block;
+  }
+   
+   </style>
+ </head>
+ <body>
+
+ <ul>
+	<li><a class="active" href="Zombie Prepared_Homepage.html">Home</a></li>
+	<li><a href="Megan's page.html">Subscribe</a></li>
+	<li class="dropdown">
+		<a href="#" class="dropbtn">Education</a>
+		<div class="dropdown-content">
+			<a href="Zombie prepared_Info.html">Zombie Info</a>
+			<a href="Mike's page.html">Praparation</a>
+		</div>
+	</li>
+	<li style="float:right"><a class="active" href="#about">About</a></li>
+</ul>
+ 
+ <section id = "Fuzzy"> 
+ <h1>How to Survive</h1>
+<p>Tip#<a id="zombieMessages">1. When in doubt, smash the brains in.</a> </p>
+    <img src="Emergancy Zombie Attack.JPG" alt="HTML5 Icon" style="width:1000px;height:1000px;">
+</section>
+
+ </body>
+ </html>

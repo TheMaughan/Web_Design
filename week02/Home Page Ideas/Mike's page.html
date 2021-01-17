@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+ <head> 
+  <title>So Cute</title>
+   <script>
+ var counter=0
+
+  var imgArray= new Array()
+
+    imgArray[0]=new Image()
+    imgArray[0].src= "zombie1.jpg"
+
+  imgArray[1]=new Image()
+    imgArray[1].src= "zombie2.jpg"
+
+  imgArray[2]=new Image()
+    imgArray[2].src= "zombie3.jpg"
+
+  var newArray= ["zombie1.jpg", "zombie2.jpg", "zombie3.jpg"]
+
+  function timerImage(){
+    var remainder=counter % newArray.length
+
+    var diplayedImage= newArray[remainder]
+    document.getElementById("section_display").innerHTML=diplayedImage
+
+    counter+=1
+    console.log(counter)
+  }
+
+   </script>
+   <style>
+   body{
+    background-image: url('nuke-time-apocalypse-image.JPG');
+    background-blend-mode: screen;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    border-top: 20px;
+    background-size: 100% 100%;
+}
+#Fuzzy{
+    background-color: rgba(0,0,0,.7);
+    width: 1200px;
+    height: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: pink;
+   }
+.mask {
+    background:transparent; 
+    padding:50px;
+}
+  ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  li {
+    float: left;
+  }
+  li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 15px 40px;
+    text-decoration: none;
+  }
+  li a:hover, .dropdown:hover .dropbtn{
+    background-color: green;
+    box-shadow: 0px 0px 5px #666666 inset;
+  }
+  li:dropdown{
+    display: inline-block;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+  .dropdown-content a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  .dropdown-content a:hover {background-color: #f1f1f1}
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+   .button {
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+.button {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.button:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+   </style>
+ </head>
+ <body>
+
+ <ul>
+  <li><a class="active" href="Zombie Prepared_Homepage.html">Home</a></li>
+  <li><a href="Megan's page.html">Subscribe</a></li>
+  <li class="dropdown">
+    <a href="#" class="dropbtn">Education</a>
+    <div class="dropdown-content">
+      <a href="Zombie prepared_Info.html">Zombie Info</a>
+      <a href="Mike's page.html">Preparation</a>
+    </div>
+  </li>
+  <li style="float:right"><a class="active" href="#about">About</a></li>
+</ul>
+ <p></p>
+  
+
+ <section id = "Fuzzy"> 
+ <h1>OMG ZOMBIES!</h1>
+ <button class="button" onclick="timerImage()">Next</button> 
+
+  <section id="section_display">
+  
+  <img src="zombie1.jpg" alt="HTML5 Icon" style="width:1000px;height:1000px;"></img> 
+  </section>
+</section>
+
+ </body>
+ </html>

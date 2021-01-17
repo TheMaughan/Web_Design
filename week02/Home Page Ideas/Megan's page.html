@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+ <head> 
+  <title>Zombie Preparedness Information</title>
+   <script>
+function addAndSaveInformation(){
+      var aName = document.getElementById("name_input").value
+      var anEmail = document.getElementById("email_input").value * 1
+      {
+        "name":aName,
+        "email":anemail,
+      
+      }
+      var allinformation = null
+    var storedInformationString = localStorage["all_information"]
+    if(storedInformationString == null){
+      allInformation = []
+    }
+    else{
+      allInformation = JSON.parse(storedInforamtionString)
+    }
+    allInformation.push(aNewMember)
+    var allInformationString = JSON.stringify(allInformation)
+    localStorage["all_Information"] = allInforamtionString
+    showAllInformation()
+
+    document.getElementById("name_input").value = null
+    document.getElementById("email_input").value  = null
+    }
+    function showAllInforation(){
+      var storedInforamationString = localStorage["all_information"]
+    if(storedInformationString != null){
+      var allInformation = JSON.parse(storedInformationString)
+      var informationDisplayer = document.getElementById("all_information_display")
+        informationDisplayer.innerHTML = null
+        var numberOfinformation = allInformation.length
+        for (var i = 0; i < allInformation.length; i++) {
+          var aInformationInput = allInformation[i]
+          InformationDisplayer.innerHTML += "<hr><p>Information: "+ aClothingCustomer["name"] +"</p>"+"<p>name: "+ aClothingCustomer["email"] +"</p>"+"<p>email "+ 
+        }
+    }
+    }
+   </script>
+   <style>
+   body{
+  	background-image: url('apocalypse_carpark.JPG');
+  	background-blend-mode: screen;
+  	background-repeat: no-repeat;
+  	background-attachment: fixed;
+  	border-top: 20px;
+  	background-size: 100% 100%;
+}
+
+input{
+      margin-top: 5px;
+    border:none; 
+    border-radius:5px; 
+    box-shadow:0px 0px 5px #666666 inset; 
+    height:25px;
+    width:200px; 
+    text-indent:5px; 
+  } 
+  input:focus { 
+    outline:none;
+    }
+    textarea{
+    margin-top: 10px;
+    border:none; 
+    border-radius:5px; 
+    box-shadow:0px 0px 5px #666666 inset;
+    width:90%;
+    height: 150px; 
+    text-indent:5px; 
+      resize:none;
+      overflow: scroll;
+    }
+    #customer_entry_area{
+      width: 500px;
+      padding-left: 5px;
+    border:none; 
+    border-radius:5px; 
+    box-shadow:0px 0px 5px #666666 inset; 
+    text-indent:5px; 
+    }
+h1{
+      text-align: center;
+    }
+#Fuzzy{
+   	background-color: rgba(0,0,0,.7);
+   	width: 1200px;
+   	height: 1200px;
+   	margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: lightgreen;
+   }
+.mask {
+    background:transparent; 
+    padding:50px;
+}
+  ul{
+  	list-style-type: none;
+  	margin: 0;
+  	padding: 0;
+  	overflow: hidden;
+  	background-color: #333;
+  }
+  li {
+  	float: left;
+  }
+  li a, .dropbtn {
+  	display: inline-block;
+  	color: white;
+  	text-align: center;
+  	padding: 15px 40px;
+  	text-decoration: none;
+  }
+  li a:hover, .dropdown:hover .dropbtn{
+  	background-color: green;
+    box-shadow: 0px 0px 5px #666666 inset;
+  }
+  li:dropdown{
+  	display: inline-block;
+  }
+  .dropdown-content {
+  	display: none;
+  	position: absolute;
+  	background-color: #f9f9f9;
+  	min-width: 160px;
+  	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+  .dropdown-content a{
+  	color: black;
+  	padding: 12px 16px;
+  	text-decoration: none;
+  	display: block;
+  	text-align: left;
+  }
+  .dropdown-content a:hover {background-color: #f1f1f1}
+
+  .dropdown:hover .dropdown-content {
+  	display: block;
+  }
+   .feelGood{
+  position: relative;
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s
+  font-size: 28px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.feelGood:after{
+  content:"";
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+.feelGood:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+   </style>
+ </head>
+ <body onload="showAllInformation()">
+
+ <ul>
+	<li><a class="active" href="Zombie Prepared_Homepage.html">Home</a></li>
+	<li><a href="Megan's page.html">Subscribe</a></li>
+	<li class="dropdown">
+		<a href="#" class="dropbtn">Education</a>
+		<div class="dropdown-content">
+			<a href="Zombie prepared_Info.html">Zombie Info</a>
+			<a href="Mike's page.html">Preparation</a>
+		</div>
+	</li>
+	<li style="float:right"><a class="active" href="#about">About</a></li>
+</ul>
+ 
+ <section id = "Fuzzy"> 
+ <h1>Tell us where you are so that we can rescue you incase of a Zombie Outbreak</h1>
+  <section id="information_entry_area">
+    <h1>News Letter</h1>
+    <input id="name_input" placeholder="Name"></input>
+    <input id="Email_input" placeholder="Email"></input>
+    <button onClick="showCongratulations(this)" class="feelGood">Submit</button>
+      <section id="result_display"></section>
+    
+  </section>
+  <section id="all_information_display"></section>
+</section>
+
+ </body>
+ </html>

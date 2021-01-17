@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+  <title> Zombie News </title>
+  <script>
+  	function addAndSaveInformation(){
+  		var aName = document.getElementById("name_input").value
+  		var anEmail = document.getElementById("email_input").value * 1
+  		{
+  			"name":aName,
+  			"email":anemail,
+  		
+  		}
+  		var allinformation = null
+		var storedInformationString = localStorage["all_information"]
+		if(storedInformationString == null){
+			allInformation = []
+		}
+		else{
+			allInformation = JSON.parse(storedInforamtionString)
+		}
+		allInformation.push(aNewMember)
+		var allInformationString = JSON.stringify(allInformation)
+		localStorage["all_Information"] = allInforamtionString
+		showAllInformation()
+
+		document.getElementById("name_input").value = null
+		document.getElementById("email_input").value  = null
+  	}
+  	function showAllInforation(){
+  		var storedInforamationString = localStorage["all_information"]
+		if(storedInformationString != null){
+			var allInformation = JSON.parse(storedInformationString)
+			var informationDisplayer = document.getElementById("all_information_display")
+	  		informationDisplayer.innerHTML = null
+	  		var numberOfinformation = allInformation.length
+	  		for (var i = 0; i < allInformation.length; i++) {
+	  			var aInformationInput = allInformation[i]
+	  			InformationDisplayer.innerHTML += "<hr><p>Information: "+ aClothingCustomer["name"] +"</p>"+"<p>name: "+ aClothingCustomer["email"] +"</p>"+"<p>email "+ 
+	  		}
+		}
+  	}
+  </script>
+
+  <style>
+
+  	h1{
+  		text-align: center;
+  	}
+  	body{
+  		background-color: LimeGreen;
+  		
+  	input{
+  		margin-top: 5px;
+		border:none; 
+		border-radius:5px; 
+		box-shadow:0px 0px 5px #666666 inset; 
+		height:25px;
+		width:200px; 
+		text-indent:5px; 
+	} 
+	input:focus { 
+		outline:none;
+  	}
+  	textarea{
+		margin-top: 10px;
+		border:none; 
+		border-radius:5px; 
+		box-shadow:0px 0px 5px #666666 inset;
+		width:90%;
+		height: 150px; 
+		text-indent:5px; 
+  		resize:none;
+  		overflow: scroll;
+  	}
+  	#customer_entry_area{
+  		width: 500px;
+  		padding-left: 5px;
+		border:none; 
+		border-radius:5px; 
+		box-shadow:0px 0px 5px #666666 inset; 
+		text-indent:5px; 
+  	}
+  	
+	
+  </style>
+</head>
+
+<body onload="showAllInformation()">
+	<section id="information_entry_area">
+		<h1>News Letter</h1>
+		<input id="name_input" placeholder="Name"></input>
+		<input id="Email_input" placeholder="Email"></input>
+		<button onClick="showCongratulations(this)">Submit</button>
+  		<section id="result_display"></section>
+  	
+	</section>
+	<section id="all_information_display"></section>
+</body>
+</html>

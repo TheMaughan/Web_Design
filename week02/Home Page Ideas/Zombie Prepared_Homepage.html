@@ -1,0 +1,257 @@
+<!doctype html>
+<html>
+ <head> 
+  <title>Zombie Preparedness</title>
+   <script>
+// CREATE SENTANCES INTO NUMBERS IN ORDER TO % THEM??
+ //HOOK UP REMAINDER VARIABLE TO  THE FUNCTION feelGoodButton.
+ //So....how about an app that displays good news throughout the day. You also can send good news to a friend that they can download to their phone to display throughout the day. 
+   var counter = 0;
+
+   var someGoodMessages = ["Shoot them in the head!" , "Don't burn Zombies, they will still chase you, and they will be on fire" , "Keep Surviving! You can do impossible things!"];
+
+
+   		var feelGoodButtonMessages = ["Press me to hear some good news!" , "You need to be educated, press me!", "Do you want to know more about Zombies? Press me!"];
+
+   function numberCounter(numberCounter) {
+   	
+   		var remainder = counter % someGoodMessages.length;
+
+         var buttonRemainder = counter % feelGoodButtonMessages.length;
+
+   		var currentMessage = someGoodMessages[remainder];
+   		document.getElementById("someGoodMessages").innerHTML = currentMessage;
+
+   		var buttonMessage = feelGoodButtonMessages[buttonRemainder];
+   		numberCounter.innerHTML = buttonMessage;
+
+   		console.log(counter , remainder , buttonRemainder );
+         counter += 1;
+
+   	}
+   function addToGoodMessages(){
+
+      var messageInputBox = document.getElementById("yourGoodNews");
+
+      if(messageInputBox.value.trim() == ""){
+
+         messageInputBox.placeholder = "You didn't add anything. Put in some good news!";
+
+      }
+
+      else{
+         someGoodMessages.push(messageInputBox.value);
+         messageInputBox.placeholder = "Hey! Add some good news!";
+      }
+
+      messageInputBox.value = null;
+      
+
+   }
+
+   </script>
+   <style>
+   body{
+  	background-image: url('apocalypse-city.JPG');
+  	background-blend-mode: screen;
+  	background-repeat: no-repeat;
+  	background-attachment: fixed;
+  	border-top: 20px;
+  	background-size: 100% 100%;
+}
+#Fuzzy{
+   	background-color: rgba(0,0,0,.7);
+   	width: 500px;
+   	height: 1200px;
+   	margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: lightgreen;
+   }
+.mask {
+    background:transparent; 
+    padding:50px;
+}
+  ul{
+  	list-style-type: none;
+  	margin: 0;
+  	padding: 0;
+  	overflow: hidden;
+  	background-color: #333;
+  }
+  li {
+  	float: left;
+  }
+  li a, .dropbtn {
+  	display: inline-block;
+  	color: white;
+  	text-align: center;
+  	padding: 15px 40px;
+  	text-decoration: none;
+  }
+  li a:hover, .dropdown:hover .dropbtn{
+  	background-color: green;
+    box-shadow: 0px 0px 5px #666666 inset;
+  }
+  li:dropdown{
+  	display: inline-block;
+  }
+  .dropdown-content {
+  	display: none;
+  	position: absolute;
+  	background-color: #f9f9f9;
+  	min-width: 160px;
+  	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+  .dropdown-content a{
+  	color: black;
+  	padding: 12px 16px;
+  	text-decoration: none;
+  	display: block;
+  	text-align: left;
+  }
+  .dropdown-content a:hover {background-color: #f1f1f1}
+
+  .dropdown:hover .dropdown-content {
+  	display: block;
+  }
+
+   textarea{
+    text-align: center;
+    display: block;
+    margin: auto;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #666666 inset;
+    text-indent: 5px;
+      width: 250px;
+      height: 100px;
+   }
+   .button {
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+.button {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.button:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+.feelGood{
+  position: relative;
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s
+  font-size: 28px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.feelGood:after{
+  content:"";
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+.feelGood:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+.cencor {
+   display: inline-block;
+  border-radius: 4px;
+  background-color: darkgrey;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 250px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+.cencor span{
+  cursor: not-allowed;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.cencor span:after{
+  content: '>:(';
+   position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.cencor:hover span{
+  padding-right: 30px;
+}
+.cencor:hover span:after{
+  opacity: 1;
+  right: 0;
+}
+   </style>
+ </head>
+ <body>
+
+ <ul>
+	<li><a class="active" href="Zombie Prepared_Homepage.html">Home</a></li>
+	<li><a href="Megan's page.html">Subscribe</a></li>
+	<li class="dropdown">
+		<a href="#" class="dropbtn">Education</a>
+		<div class="dropdown-content">
+			<a href="Zombie prepared_Info.html">Zombie Info</a>
+			<a href="Mike's page.html">Preparation</a>
+		</div>
+	</li>
+	<li style="float:right"><a class="active" href="#about">About</a></li>
+</ul>
+ 
+ <section id = "Fuzzy"> 
+ <h1>Are You Zombie Prepared?</h1>
+ 	<button class="feelGood" onclick="numberCounter(this)">Hey...press here for something cool.</button>
+
+
+
+ 	<p>Good News: <a id="someGoodMessages"></a></p>
+
+   <section id="hidden_note_number"></section>
+
+      <p><textarea id="yourGoodNews" placeholder= "Type your thoughts here..."></textarea></p>
+
+   <button class="button" onclick="addToGoodMessages()">Add your insight</button>
+
+  <p>If only we could push this button...</p>
+   <button class="cencor" style="vertical-align:middle"><span>Government Secrets</span></button>
+
+
+</section>
+
+ </body>
+ </html>
