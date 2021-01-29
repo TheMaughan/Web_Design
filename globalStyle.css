@@ -1,0 +1,76 @@
+body {
+    background-image: url('blue_tech.jpg');
+    background-blend-mode: screen;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    border-top: 20px;
+    background-size: 100% 100%;
+    
+}
+#Fuzzy {
+     background-color: rgba(0,0,0,.9);
+     width: 500px;
+     height: 1200px;
+     margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: #ffca85;
+    font-family: Garamond, serif;
+   }
+.mask {
+    background:transparent; 
+    padding:50px;
+}
+  ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    padding: auto;
+    font-family: Verdana,sans-serif;
+  }
+  ul.index{
+   background-color: rgba(0,0,0,1);
+   font-family: Verdana,sans-serif;
+  }
+
+  li.menu a{
+    float: left;
+    font-family: Verdana,sans-serif;
+  }
+  li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 15px 40px;
+    text-decoration: none;
+  }
+  li a:hover, .dropdown:hover .dropbtn{
+    background-color: #ff9100cc;
+    box-shadow: 0px 0px 5px #000000 inset;
+  }
+  li a, .dropdown{
+    display: inline-block;
+    
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+  }
+  .dropdown-content a{
+    color: #f9f9f9;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  .dropdown-content a:hover {background-color: rgb(77, 77, 77)}
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
