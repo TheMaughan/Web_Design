@@ -84,7 +84,6 @@ th, td {
 </style>
 </head>
 <body>
-
   <!-- Top of page menu -->
 <ul>
 <li class="menu"><a class="active" href="../week02/assign02.html">Home</a></li>
@@ -92,7 +91,7 @@ th, td {
  <a href="../index.html" class="dropbtn">Assignment Index</a>
  <div class="dropdown-content">
    <a href="../week02/assign02.html">Week 02 (HTML)</a>
-   <a href="./week03/assign03.html">Week 03 (CSS)</a>
+   <a href="../week03/assign03.html">Week 03 (CSS)</a>
    <a href="../week04/assign04.html">Week 04</a>
    <a href="../week05/assign05.html">Week 05</a>
    <a href="../week06/assign06.html">Week 06</a>
@@ -113,6 +112,8 @@ th, td {
 
  <h1 class="center">Bryce Maughan's Home v2.0</h1>
 
+ <a class="center" title="TheMon">TheMon</a>
+
  <img src="me.jpg" alt="Picture of Me and my wife Imi" class="center">
 
  <p class="center">My name is Bryce, and my major is VDC (Virtual Design and Construction)</p>
@@ -122,42 +123,59 @@ th, td {
 
   <p class="center">Click on the ship to discover some games I made in Python! GitHub link:</p>
   <a href="https://github.com/TheMaughan/Games_I_Made">
-   <img src="../ship_icon.ico" alt="Games_I_Made on GigHub" width="75" height="auto">
+   <img src="../ship_icon.ico" alt="Games_I_Made on GigHub" width="75">
  </a>
 
  <blockquote class="quote">“Yes, I have a dream, and it’s not some MLK dream for equality. I want to own a decommissioned lighthouse. And I want to live at the top. And nobody knows I live there. And there’s a button that I can press, and launch that lighthouse into space.”</blockquote>
  <blockquote class="center">~ Stanley Hudson – The Office</blockquote>
 
- <!-- Write your comments here -->
- <table class="center" style="width: 75%;">
-  <caption>Winter 2021 Semester</caption>
-    <tr>
-      <th>Course</th>
-      <th>Couse Description</th>
-      <th>Class Time</th>
-      <th>Class Type/Location</th>
-    </tr>
-    <tr>
-      <td>CSE 310</td>
-      <td>Applied Programming</td>
-      <td>7:45 - 8:45 am</td>
-      <td>On Campus - STC Building</td>
-    </tr>
-    <tr>
-      <td>REL 250C</td>
-      <td>Jesus Christ & the Everlasting Gospel</td>
-      <td>10:15 - 11:15 am</td>
-      <td>Hybrid Class - Taylor 140 or Zoom</td>
-    </tr>
-    <tr>
-      <td>CS 213</td>
-      <td>Web Engineering I</td>
-      <td>Anytime</td>
-      <td>Online Only</td>
-    </tr>
- </table>
+ <!-- List with input: -->
+ <ul class="center" style="text-align: center; list-style-position: inside;">
+  <li>
+    <label class="container">I agree with Stanley:
+      <input type="checkbox" checked="checked">
+      <span class="checkmark"></span>
+    </label>
+  </li>
+  <li>
+    <label class="container">Smells like chicken:
+      <input type="checkbox">
+      <span class="checkmark"></span>
+    </label>
+  </li>
+  <li>
+    <label class="container">I just ate a pickle
+      <input type="checkbox">
+      <span class="checkmark"></span>
+    </label>
+  </li>
+  <li>
+    <label class="container">bool = True;
+      <input type="checkbox">
+      <span class="checkmark"></span>
+    </label>
+  </li>
+  <li>
+    <label class="container">Dogs > Cats:
+      <input type="radio">
+      <span class="dot"></span>
+    </label>
+  </li>
+  <li>
+    <label class="container">Pizza tonight:
+      <input type="radio">
+      <span class="dot"></span>
+    </label>
+  </li>
+  <li>
+    <label class="container">C++ arrays and pointers are the worst:
+      <input type="radio">
+      <span class="dot"></span>
+    </label>
+  </li>
+</ul>
 
- <input id="name_input" placeholder="Your Name:"></input>
+ <input id="name_input" placeholder="Your Name:">
 
  <p>Enter Your Name above</p>
 
@@ -178,11 +196,11 @@ th, td {
     <option value="4">Destructor</option>
     <option value="5">CIA</option>
     <option value="6">Crawller</option>
-    <option value="7">SJW</option>
-    <option value="8">MAGA</option>
-    <option value="9">I don't care</option>
-    <option value="10">Boogie man</option>
-    <option value="11">Sasquach</option>
+    <option value="7">SJW -> Triggered</option>
+    <option value="8">Computer Whisperer</option>
+    <option value="9">Computer Yeller</option>
+    <option value="10">Troll</option>
+    <option value="11">Influencer</option>
     <option value="12">Onion</option>
   </select>
 </div>
@@ -190,6 +208,7 @@ th, td {
   <!-- Fake copyright, made it just for fun -->
   <p class="center">Webpage made for CS213</p>
   <p class="center">&copy; TheMon 2021</p>
+  <a href="https://byui.instructure.com/courses/127272/assignments/5142237?module_item_id=13934416">I-Learn Assignment Reference</a>
  </footer>
 
  </section>
