@@ -7,6 +7,7 @@
   <title>Bryce Maughan's Home Page</title>
   <style>
 
+/* General setting for main content */
 .center {
 display: block;
 margin-left: auto;
@@ -18,13 +19,14 @@ width: 50%;
   text-align: center;
   margin: auto;
   width: 75%;
-  color: #fc8a00;
-
+  color: #7aceffc4;
 }
+
 img {
   max-width: 215px;
   height: auto;
 }
+
 table, th, td {
   border: 1px solid rgb(255, 255, 255);
   border-collapse: collapse;
@@ -35,12 +37,56 @@ th, td {
   text-align: left;    
 }
 
+.submit {
+  background-color: rgb(2, 119, 189);
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: progress;
+  border-radius: 12px;
+  font-family: Verdana,sans-serif;
+  box-shadow: 0px 0px 10px #000000 inset;
+}
+.submit span{
+  cursor: wait;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.submit span:after{
+  content: '>>';
+   position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.submit:hover span{
+  padding-right: 30px;
+}
+.submit:hover span:after{
+  opacity: 1;
+  right: 0;
+}
+
+.custom-select {
+  position: relative;
+  font-family: Arial;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 </style>
 </head>
 <body>
 
+  <!-- Top of page menu -->
 <ul>
-
 <li class="menu"><a class="active" href="../week02/assign02.html">Home</a></li>
 <li class="dropdown">
  <a href="../index.html" class="dropbtn">Assignment Index</a>
@@ -62,19 +108,27 @@ th, td {
 <li style="float:right"><a class="active" href="../about.html">About</a></li>
 </ul>
 
-<section id = "Fuzzy"> 
+<!-- Main body -->
+<section id = "Main_body"> 
 
  <h1 class="center">Bryce Maughan's Home v2.0</h1>
 
  <img src="me.jpg" alt="Picture of Me and my wife Imi" class="center">
 
- <p class="center">My name is Bryce, and I’m a VDC (Virtual Design and Construction) major</p>
-  <p class="center">attending BYU-I in Rexburg, Idaho.</p>
- 
- <p style="color: white;">.</p>
+ <p class="center">My name is Bryce, and my major is VDC (Virtual Design and Construction)</p>
+ <p class="center">attending BYU-I in Rexburg, Idaho.</p>
+
+ <a class="button" href="../about.html">More about Bryce</a>
+
+  <p class="center">Click on the ship to discover some games I made in Python! GitHub link:</p>
+  <a href="https://github.com/TheMaughan/Games_I_Made">
+   <img src="../ship_icon.ico" alt="Games_I_Made on GigHub" width="75" height="auto">
+ </a>
+
  <blockquote class="quote">“Yes, I have a dream, and it’s not some MLK dream for equality. I want to own a decommissioned lighthouse. And I want to live at the top. And nobody knows I live there. And there’s a button that I can press, and launch that lighthouse into space.”</blockquote>
  <blockquote class="center">~ Stanley Hudson – The Office</blockquote>
 
+ <!-- Write your comments here -->
  <table class="center" style="width: 75%;">
   <caption>Winter 2021 Semester</caption>
     <tr>
@@ -103,11 +157,41 @@ th, td {
     </tr>
  </table>
 
- <p style="color: white;">.</p>
- <p style="color: white;">.</p>
- <p style="color: white;">.</p>
- <p style="color: white;">.</p>
-</section>
+ <input id="name_input" placeholder="Your Name:"></input>
 
+ <p>Enter Your Name above</p>
+
+ <button class="submit" style="vertical-align:middle"><span>Submit </span></button>
+ 
+ <button class="submit" style="vertical-align:middle"><span>Reset </span></button>
+
+ <p><textarea id="yourGoodNews" placeholder= "Type your thoughts here..."></textarea></p>
+
+ <footer>
+    <!-- This is an option menu -->
+ <div class="custom-select" style="width:200px;">
+  <select>
+    <option value="0">Visitor Survey:</option>
+    <option value="1">Incognito</option>
+    <option value="2">Myself</option>
+    <option value="3">Instructor</option>
+    <option value="4">Destructor</option>
+    <option value="5">CIA</option>
+    <option value="6">Crawller</option>
+    <option value="7">SJW</option>
+    <option value="8">MAGA</option>
+    <option value="9">I don't care</option>
+    <option value="10">Boogie man</option>
+    <option value="11">Sasquach</option>
+    <option value="12">Onion</option>
+  </select>
+</div>
+
+  <!-- Fake copyright, made it just for fun -->
+  <p class="center">Webpage made for CS213</p>
+  <p class="center">&copy; TheMon 2021</p>
+ </footer>
+
+ </section>
  </body>
  </html>
