@@ -2,8 +2,8 @@
     box-sizing: border-box;
   }
   
-body, .header {
-    background-image: url('../blue_tech.jpg');
+body {
+    background-image: url('../blue_nebula.jpg');
     background-blend-mode: screen;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -20,6 +20,7 @@ body, .header {
     text-align: center;
     font-size: 35px;
     color: white;
+    height: fit-content;
   }
   
   /* Style the top navigation bar */
@@ -28,6 +29,7 @@ body, .header {
     background-color: #000000;
     position: sticky;
     top: 0;
+    z-index: 1;
   }
   
   /* Style the topnav links */
@@ -84,7 +86,7 @@ body, .header {
   .middle,
   .right {
     padding: 10px;
-    height: 3000px;
+    height: 1000px;
   }
   
   /* Style the left navigaiton */
@@ -135,7 +137,7 @@ body, .header {
   /* Style the footer */
   .footer {
     grid-area: footer;
-    background-color: #f1f1f1;
+    background-color: rgba(0, 0, 0, .7);
     padding: 10px;
     text-align: center;
     z-index: 1;

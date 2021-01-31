@@ -7,7 +7,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Assignment 04</title>
+
 <style>
+/* Style the header */
+.header {
+  background-image: url('./Bill_Shipyard.jpg');
+  background-blend-mode: screen;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: contain;
+  background-position-x: center;
+}
 .topnav a.active {
     background-color: #2196F3;
     color: white;
@@ -15,6 +25,50 @@
 .localnav {
   color: white;
   text-decoration: none;
+}
+/* Having an Idea...
+.right {
+  background-color: rgba(0, 0, 0, .9);
+  color: white;
+}*/
+.middle {
+  column-span: all;
+  min-width: 500px;
+  margin-right: 0%;
+  left: 100px;
+  position: relative;
+}
+.middle p{
+  display: block;
+  color: white;
+  padding: 10px;
+  min-width: 300px;
+  text-align: center;
+}
+.middle h3{
+  text-align: center;
+  color: white;
+  font-size: 30px;
+}
+/* The grid container */
+.m-g-1 {
+  background-color: #2196F3;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 0px;
+  padding: 20px;
+}
+.m-g-index {
+  width: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+}
+div.container {
+  padding: 10px;
 }
 </style>
 
@@ -38,17 +92,55 @@
 
 <div class="grid-container">
   <div class="header">
-    <h2>Assignment 04</h2>
+    <h2>Bill's Used Shipyard</h2>
   </div>
-    
+  
+  <!-- left local navigation bar -->
   <div class="left">
     <a class="localnav" href="#">Link 1</a>
     <a class="localnav" href="#">Link 2</a>
     <a class="localnav" href="#">Link 3</a>
   </div>
 
-  <div class="middle">Column</div>  
-  <div class="right">Column</div>
+  <!-- Main Content -->
+  <div class="middle">
+    <h3>Ships</h3>
+    <p>This is text</p>
+    <span class="main-middle">
+      <span class="m-g-1">
+        <div class="m-g-index">item-1</div>
+        <div class="m-g-index">item-2</div>
+        <div class="m-g-index">item-3</div>
+      </span>      
+    </span>
+    <p>This is text</p>
+    <span class="main-middle">
+      <span class="m-g-1">
+        <div class="m-g-index">item-1</div>
+        <div class="m-g-index">item-2</div>
+        <div class="m-g-index">item-3</div>
+      </span>      
+    </span>
+    <p>This is text</p>
+    <span class="main-middle">
+      <span class="m-g-1">
+        <div class="m-g-index">item-1</div>
+        <div class="m-g-index">item-2</div>
+        <div class="m-g-index">item-3</div>
+      </span>      
+    </span>
+    <p>This is text</p>
+    <span class="main-middle">
+      <span class="m-g-1">
+        <div class="m-g-index">item-1</div>
+        <div class="m-g-index">item-2</div>
+        <div class="m-g-index">item-3</div>
+      </span>      
+    </span>
+  </div>
+
+  <!-- Right Column 
+  <div class="right">Column</div> -->
     
   <div class="footer">
     <p>Footer</p>
