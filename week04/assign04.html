@@ -17,6 +17,18 @@
   background-attachment: fixed;
   background-size: contain;
   background-position-x: center;
+  border: 1px solid #2196F3;
+  height: 400px;
+  background-color: rgba(0, 0, 0, 0.9);
+  opacity: 0.9;
+}
+
+.h-center {
+  position: fixed;
+  text-align: center;
+  top: 15%;
+  width: 100%;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
 .topnav a.active {
     background-color: #2196F3;
@@ -26,23 +38,16 @@
   color: white;
   text-decoration: none;
 }
-/* Having an Idea...
+
 .right {
-  background-color: rgba(0, 0, 0, .9);
+  background-color: rgba(0, 99, 230, 0.9);
   color: white;
-}*/
-.middle {
-  column-span: all;
-  min-width: 500px;
-  margin-right: 0%;
-  left: 100px;
-  position: relative;
 }
+
 .middle p{
   display: block;
   color: white;
   padding: 10px;
-  min-width: 300px;
   text-align: center;
 }
 .middle h3{
@@ -52,20 +57,21 @@
 }
 /* The grid container */
 .m-g-1 {
-  background-color: #2196F3;
   display: grid;
   grid-template-columns: auto auto auto;
   grid-column-gap: 0px;
   padding: 20px;
 }
 .m-g-index {
+  float: center;
   width: 250px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border: 1px solid rgba(0, 0, 0, 0.8);
+  box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  border: 1px solid rgba(131, 0, 253, 0.8);
   padding: 20px;
   font-size: 30px;
   text-align: center;
   font-family: 'Times New Roman', Times, serif;
+  font-size: medium;
 }
 div.container {
   padding: 10px;
@@ -80,8 +86,8 @@ div.container {
 
 <div class="topnav">
   <a href="../index.html">Assignment Index</a>
-  <a href="./assign04.html" class="active">assign04</a>
-  <a href="./assign04_2.html">assign04_2</a>
+  <a href="./assign04.html" class="active">Bill's Ships Homepage</a>
+  <a href="./assign04_2.html">Ship Stats</a>
   <div class="search-container">
     <form action="search-container">
       <input type="text" placeholder="Search.." name="search">
@@ -92,58 +98,122 @@ div.container {
 
 <div class="grid-container">
   <div class="header">
-    <h2>Bill's Used Shipyard</h2>
+    <h1 class="h-center">Bill's Used Ships</h1>
   </div>
   
   <!-- left local navigation bar -->
   <div class="left">
-    <a class="localnav" href="#">Link 1</a>
-    <a class="localnav" href="#">Link 2</a>
-    <a class="localnav" href="#">Link 3</a>
+    <a href="../week02/assign02.html">HTML</a>
+    <a href="../week03/assign03.html">CSS</a>
+    <a href="./week04/assign04.html">Bill's Ships</a>
+    <a href="../week05/assign05.html">Week 05</a>
   </div>
 
   <!-- Main Content -->
   <div class="middle">
     <h3>Ships</h3>
-    <p>This is text</p>
+    <p>Like New!!</p>
     <span class="main-middle">
       <span class="m-g-1">
-        <div class="m-g-index">item-1</div>
-        <div class="m-g-index">item-2</div>
-        <div class="m-g-index">item-3</div>
+        <div class="m-g-index">
+          <img src="ASP Explorer.jpg" alt="ASP" style="width:100%">
+          <div>
+            <p>ASP EXPLORER: 6,000,000 <span style="color: gray;">cr</span></p>
+          </div>
+        </div>
+        <div class="m-g-index">
+          <img src="Cobramk3.jpg" alt="cobra" style="width:100%">
+          <div>
+            <p>COBRA MK III: 300,000 <span style="color: gray;">cr</span></p>
+          </div>
+        </div>
+        <div class="m-g-index">
+          <img src="Courier.jpg" alt="Courier" style="width:100%">
+          <div>
+            <p>IMPERIAL COURIER: 2,542,000 <span style="color: gray;">cr</span></p>
+          </div>
+        </div>
       </span>      
     </span>
-    <p>This is text</p>
+    <p>Bill's Ships = no BS!!</p>
     <span class="main-middle">
       <span class="m-g-1">
-        <div class="m-g-index">item-1</div>
-        <div class="m-g-index">item-2</div>
-        <div class="m-g-index">item-3</div>
+        <div class="m-g-index">
+          <img src="Eagle.png" alt="eagle" style="width:100%">
+          <div>
+            <p>IMPERIAL EAGLE: 110,800 <span style="color: gray;">cr</span></p>
+          </div>
+        </div>
+        <div class="m-g-index">
+          <img src="hauler.jpg" alt="hauler" style="width:100%">
+          <div>
+            <p>HAULER: 52,720 <span style="color: gray;">cr</span></p>
+          </div>
+        </div>
+        <div class="m-g-index">
+          <img src="python.jpg" alt="python" style="width:100%">
+          <div>
+            <p>PYTHON: 56,978,000 <span style="color: gray;">cr</span></p>
+          </div>
+        </div>
       </span>      
     </span>
-    <p>This is text</p>
+    <p>Best offer also acepted</p>
     <span class="main-middle">
       <span class="m-g-1">
-        <div class="m-g-index">item-1</div>
-        <div class="m-g-index">item-2</div>
-        <div class="m-g-index">item-3</div>
-      </span>      
-    </span>
-    <p>This is text</p>
-    <span class="main-middle">
-      <span class="m-g-1">
-        <div class="m-g-index">item-1</div>
-        <div class="m-g-index">item-2</div>
-        <div class="m-g-index">item-3</div>
+        <div class="m-g-index">
+          <img src="Type-2_ad.jpg" alt="Mamba" style="width:100%">
+          <div>
+            <p>Type-2: 320,000 <span style="color: gray;">cr</span></p>
+          </div>
+        </div>
+        <div class="m-g-index">
+          <img src="Type-9.jpg" alt="Mamba" style="width:100%">
+          <div>
+            <p>Type-9 HEAVY: 76,555,840<span style="color: gray;">cr</span></p>
+          </div>
+        </div>
+        <div class="m-g-index">
+          <img src="Join_Fleet_ad.jpg" alt="Mamba" style="width:100%">
+          <div>
+            <p>Join the Fleet Today!!!</p>
+          </div>
+        </div>
       </span>      
     </span>
   </div>
 
-  <!-- Right Column 
-  <div class="right">Column</div> -->
+  <!-- Right Column -->
+  <div class="right">Ad Column
+    <p>This is text</p>
+    <span class="main-middle">
+      <span class="m-g-1">
+        <div class="m-g-index">
+          <img src="Mamba_ad.jpg" alt="Mamba" style="width:100%">
+        </div>
+      </span>      
+    </span>
+    <p>This is text</p>
+    <span class="main-middle">
+      <span class="m-g-1">
+        <div class="m-g-index">
+          <img src="Corvette_ad.jpg" alt="Corvette" style="width:100%">
+        </div>
+      </span>      
+    </span>
+    <p>This is text</p>
+    <span class="main-middle">
+      <span class="m-g-1">
+        <div class="m-g-index">
+          <img src="Python_ad.jpg" alt="Mamba" style="width:100%">
+        </div>
+      </span>      
+    </span>
+  </div>
     
   <div class="footer">
-    <p>Footer</p>
+  <p class="center">Webpage made for CS213</p>
+  <p class="center">&copy; TheMon 2021</p>
   </div>
 </div>
 </body>

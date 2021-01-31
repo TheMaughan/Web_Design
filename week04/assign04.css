@@ -3,7 +3,7 @@
   }
   
 body {
-    background-image: url('../blue_nebula.jpg');
+    background-image: url('../Krait_blue.jpg');
     background-blend-mode: screen;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -21,12 +21,13 @@ body {
     font-size: 35px;
     color: white;
     height: fit-content;
+    z-index: -1;
   }
   
   /* Style the top navigation bar */
   .topnav {
     overflow: hidden;
-    background-color: #000000;
+    background-color: rgb(0, 7, 15);
     position: sticky;
     top: 0;
     z-index: 1;
@@ -86,20 +87,21 @@ body {
   .middle,
   .right {
     padding: 10px;
-    height: 1000px;
+    height: 1500px;
   }
   
   /* Style the left navigaiton */
   .left {
-    background-color: #000000;
+    background-color: rgb(0, 7, 15);
     color: white;
     padding: 5px;
     grid-area: menu;
     position: fixed;
     height: 100%;
-    width: 100px;
+    width: 80px;
     top: 1;
     left: 0;
+    z-index: 1;
     }
 
 
@@ -120,23 +122,25 @@ body {
   
   /* Style the middle column */
   .middle {
-    grid-area: middle;
-    position: static;
-    min-width: 300px;
-    background-color: rgba(0, 0, 0, .9);
-    /*opacity: 30%;*/
+    background-color: #000000;
+    left: 200px;
+    right: -25px;
+    position: sticky;
   }
   
   /* Style the right column */
   .right {
     grid-area: right;
     text-align: center;
-    background-color:#ccc;
+    width: 300px;
+    right: 0px;
+    position: static;
   }
   
   /* Style the footer */
   .footer {
     grid-area: footer;
+    color: white;
     background-color: rgba(0, 0, 0, .7);
     padding: 10px;
     text-align: center;
@@ -148,13 +152,12 @@ body {
       display: grid;
       grid-template-areas:
         'header header header header header header' 
-        'left middle middle middle right right' 
+        'left middle middle middle middle right' 
         'footer footer footer footer footer footer';
-       grid-column-gap: 0px;
     } 
 
   /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-  /* Going to play with more for assign05 */
+  /* Going to play with more for assign05 
   @media (max-width: 600px) {
     .grid-container  {
       grid-template-areas: 
@@ -164,4 +167,4 @@ body {
         'right right right right right right' 
         'footer footer footer footer footer footer';
     }
-  }
+  }*/
