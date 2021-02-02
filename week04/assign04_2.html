@@ -17,10 +17,8 @@
   background-attachment: fixed;
   background-size: contain;
   background-position-x: center;
-  border: 1px solid #2196F3;
-  height: 400px;
-  background-color: rgba(0, 0, 0, 0.9);
-  opacity: 0.9;
+  height: 300px;
+  background-color: rgba(0, 0, 0, 1);
 }
 
 .h-center {
@@ -30,31 +28,59 @@
   width: 100%;
   text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
+
 .topnav a.active {
-    background-color: #2196F3;
-    color: white;
-  }
+ background-color: #2196F3;
+ color: white;
+}
 .localnav {
   color: white;
   text-decoration: none;
 }
 
-.right {
-  background-color: rgba(0, 99, 230, 0.9);
-  color: white;
+.m {
+  grid-area: m;
+  
+  width: 100%;
+  height: 1000px;
+  background-color: rgb(48, 48, 48);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.middle p{
+.m p{
   display: block;
-  color: white;
+  color: grey;
   padding: 10px;
   text-align: center;
 }
-.middle h3{
+
+.m h3{
   text-align: center;
   color: white;
   font-size: 30px;
 }
+
+.r {
+  background-color: darkslategrey;
+  grid-area: r;
+  width: 100%;
+  height: 500px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.r p{
+  display: block;
+  color: lightblue;
+  padding: 10px;
+  text-align: center;
+}
+
+.r h3{
+  text-align: center;
+  color: lightblue;
+  font-size: 40px;
+}
+
 /* The grid container */
 .m-g-1 {
   display: grid;
@@ -71,10 +97,64 @@
   font-size: 30px;
   text-align: center;
   font-family: 'Times New Roman', Times, serif;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+div.container {
+  padding: 10px;
+}
+
+/* The grid container */
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header' 
+    'm m m m m m'
+    'r r r r r r'
+    'footer footer footer footer footer footer';
+  grid-gap: 1px;
+}
+
+/* The grid container */
+.m-g-1 {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 0px;
+  padding: 20px;
+}
+.m-g-index {
+  float: center;
+  width: 250px;
+  box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  border: 1px solid rgba(131, 0, 253, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: medium;
 }
 div.container {
   padding: 10px;
 }
+
+.index {
+  float: center;
+  width: 50%;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: medium;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+}
+
 </style>
 
 <script src="#"></script>
@@ -108,112 +188,30 @@ div.container {
     <a href="../week05/assign05.html">Week 05</a>
   </div>
 
-  <!-- Main Content -->
-  <div class="middle">
-    <h3>Ships</h3>
-    <p>Like New!!</p>
-    <span class="main-middle">
-      <span class="m-g-1">
-        <div class="m-g-index">
-          <img src="ASP Explorer.jpg" alt="ASP" style="width:100%">
-          <div>
-            <p>ASP EXPLORER: 6,000,000 <span style="color: gray;">cr</span></p>
-          </div>
-        </div>
-        <div class="m-g-index">
-          <img src="Cobramk3.jpg" alt="cobra" style="width:100%">
-          <div>
-            <p>COBRA MK III: 300,000 <span style="color: gray;">cr</span></p>
-          </div>
-        </div>
-        <div class="m-g-index">
-          <img src="Courier.jpg" alt="Courier" style="width:100%">
-          <div>
-            <p>IMPERIAL COURIER: 2,542,000 <span style="color: gray;">cr</span></p>
-          </div>
-        </div>
-      </span>      
-    </span>
-    <p>Bill's Ships = no BS!!</p>
-    <span class="main-middle">
-      <span class="m-g-1">
-        <div class="m-g-index">
-          <img src="Eagle.png" alt="eagle" style="width:100%">
-          <div>
-            <p>IMPERIAL EAGLE: 110,800 <span style="color: gray;">cr</span></p>
-          </div>
-        </div>
-        <div class="m-g-index">
-          <img src="hauler.jpg" alt="hauler" style="width:100%">
-          <div>
-            <p>HAULER: 52,720 <span style="color: gray;">cr</span></p>
-          </div>
-        </div>
-        <div class="m-g-index">
-          <img src="python.jpg" alt="python" style="width:100%">
-          <div>
-            <p>PYTHON: 56,978,000 <span style="color: gray;">cr</span></p>
-          </div>
-        </div>
-      </span>      
-    </span>
-    <p>Best offer also acepted</p>
-    <span class="main-middle">
-      <span class="m-g-1">
-        <div class="m-g-index">
-          <img src="Type-2_ad.jpg" alt="Mamba" style="width:100%">
-          <div>
-            <p>Type-2: 320,000 <span style="color: gray;">cr</span></p>
-          </div>
-        </div>
-        <div class="m-g-index">
-          <img src="Type-9.jpg" alt="Mamba" style="width:100%">
-          <div>
-            <p>Type-9 HEAVY: 76,555,840<span style="color: gray;">cr</span></p>
-          </div>
-        </div>
-        <div class="m-g-index">
-          <img src="Join_Fleet_ad.jpg" alt="Mamba" style="width:100%">
-          <div>
-            <p>Join the Fleet Today!!!</p>
-          </div>
-        </div>
-      </span>      
-    </span>
-  </div>
 
-  <!-- Right Column -->
-  <div class="right">Ad Column
-    <p>This is text</p>
-    <span class="main-middle">
-      <span class="m-g-1">
-        <div class="m-g-index">
-          <img src="Mamba_ad.jpg" alt="Mamba" style="width:100%">
-        </div>
-      </span>      
-    </span>
-    <p>This is text</p>
-    <span class="main-middle">
-      <span class="m-g-1">
-        <div class="m-g-index">
-          <img src="Corvette_ad.jpg" alt="Corvette" style="width:100%">
-        </div>
-      </span>      
-    </span>
-    <p>This is text</p>
-    <span class="main-middle">
-      <span class="m-g-1">
-        <div class="m-g-index">
-          <img src="Python_ad.jpg" alt="Mamba" style="width:100%">
-        </div>
-      </span>      
-    </span>
-  </div>
-    
+  
+    <!-- Main Content -->
+    <div class="m">
+      <h3>Ships</h3>
+        <span class="index">
+          <img src="Ship_statsheet.png" alt="Ship_Stats" class="center">
+          <div>
+            <p>Average Ship Stats</p>
+            <p>Best viewed on a larger screen</p>
+          </div>
+        </span>
+    </div>
+
+    <div class="r">
+      <h3>Section</h3>
+      <p>Lots of text</p>
+    </div>
+
   <div class="footer">
-  <p class="center">Webpage made for CS213</p>
-  <p class="center">&copy; TheMon 2021</p>
+    <p class="center">Webpage made for CS213</p>
+    <p class="center">&copy; TheMon 2021</p>
   </div>
+  
 </div>
 </body>
 </html>

@@ -11,15 +11,15 @@ body {
 
 /* For the main content area */
 #Main_body {
-     background-color: rgba(0,0,0,.9);
-     width: 500px;
-     height: 1200px;
-     margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    color: #d5efffbb;
-    font-family: Garamond, serif;
-   }
+  background-color: rgba(0,0,0,.9);
+  width: 500px;
+  height: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: #d5efffbb;
+  font-family: Garamond, serif;
+}
 .mask {
     background:transparent; 
     padding:50px;
