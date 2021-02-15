@@ -107,7 +107,7 @@ body {
 }
 
 /* For generic text areas */
-  textarea{
+  .textarea{
     text-align: center;
     display: block;
     margin: auto;

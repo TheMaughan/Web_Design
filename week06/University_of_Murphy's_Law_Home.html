@@ -9,34 +9,26 @@
 <style>
 #header {
   background-image: url('./Pictures/Welcome-2020.jpg');
-  background-blend-mode: screen;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: rgba(0, 0, 0, 0.9);
-  opacity: 0.9;
-  height: 450px;
-  background-position: center;
-}
-
-.h-center {
-  display: flex;
-  justify-content: center;
-  position: fixed;
-  text-align: center;
-  top: 50%;
-  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  height: 800px;  
 }
 
 .middle {
   background-image: url('./Pictures/m-l-s_logo.jpg');
-  background-blend-mode: screen;
-  background-size: contain;
-  background-repeat: no-repeat;
-
-  background-position-x: center;
-  background-position-y: center;
+  background-attachment: fixed;
   background-color: rgba(0, 0, 0, 0.9);
   opacity: 0.9;
+}
+
+.rain {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-image: url('./Pictures/rain.gif');
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.cute-end {
+  background-image: url('./Pictures/cute-end.jpg');
+  color: #f1f1f1;
 }
 
  /* The grid container */
@@ -64,45 +56,87 @@
   <a href="./University_of_Murphy's_Athletics.html">Athletics</a>
 </section>
 
+<!--  Header of Page, Welcome :)  -->
 <section id="grid-container">
-  <section id="header">
-    <h2 class="h-center">University of Murphy's Law</h2>
+  <section id="header" class="b-cover">
+    <h2 class="h-start">University</h2>
+    <h2 class="h-end">of Murphy's Law</h2>
   </section>
+
+  <!--  Local Navigation, Playing with 'Sticky' positioning -->
   <section id="left">
     <a id="left" href="#">University</a>
     <a id="left" href="#UML Logic">UML Logic</a>
     <a id="left" href="#Enroll-Today">Enroll Today!</a>
+    <!--  The 'margin-top' helps with link spacing -->
+    <a id="left" style="margin-top: 700px;" href="#Learn">Learn More</a>
   </section>
-  <div class="middle" style="background-color:#bbb;">
+
+  <!--  Main Content Container  -->
+  <div class="middle b-cover">
+
+    <!--  The UML Logic Section - Expect Murphy's Law  -->
+    <section class="info-blue rain b-contain container-b" id="content">
+      <h2 class="txt-big" id="UML Logic">Expect the Obvious Outcome</h2>
+      <div class="flex-image">
+        <p>What can to wrong</p>
+      </div>
+      <p style="text-transform: uppercase;">Will go wrong</p>
+    </section>
+    <!-- Grid Space -->
+    <section id="c-grid">
+      <div class="top">
+        <h2>Welcome to Another 2020!</h2>
+      </div>
+      <div>
+        <img class="L-side" src="./Pictures/corona.gif" alt="2020-Happiness">
+      </div>
+      <div class="R-side">
+        <p>Our Cinical but Realistic logic proves correct again! You thought that 2020 was bad? The 20th decade has just begun.</p>
+      </div>
+    </section>
+
+    <!--  Enroll Section - Advertise  -->
+    <section class="info-red" id="content">
+      <h2 id="Enroll-Today">Never be Unprepared!</h2>
+      <p>Join us in our negative school of thought and always predict the future with positive thinking!</p>
+    </section>
+    <!-- Advertise container -->
+    <div class="container-b warm-glow cute-end b-cover">
+      <div>
+        <h1 style="text-align: center;">The Future is Warm</h1>
+      </div>
+      <section id="content">
+        <div>
+          <p>We got the sticks</p>
+        </div>
+        <div style="margin-left: 50%; margin-top: 50%;">
+          <p>You bring the marshmallows</p>
+        </div>
+      </section>
+    </div>
+
+    <!--  Enroll Section - Advertise  -->
     <section id="content">
-      <h2 id="UML Logic">Always Expect the Obvious Outcome</h2>
-      <p>What can go wrong will go wrong</p>
+      <h2 id="Learn">Feeling Safe With Us?</h2>
+      <a href="./University_of_Murphy's_Athletics.html" class="button warm-glow">Check out our Athletics Program!</a>
     </section>
     <section id="content">
-      <h2>Always Expect the Obvious Outcome</h2>
-      <p>What can go wrong will go wrong</p>
-    </section>
-    <section id="content">
-      <h2 id="Enroll-Today">Always Expect the Obvious Outcome</h2>
-      <p>What can go wrong will go wrong</p>
-    </section>
-    <section id="content">
-      <h2>Always Expect the Obvious Outcome</h2>
-      <p>What can go wrong will go wrong</p>
-    </section>
-    <section id="content">
-      <h2>Always Expect the Obvious Outcome</h2>
-      <p>What can go wrong will go wrong</p>
-    </section>
-    <section id="content">
-      <h2>Always Expect the Obvious Outcome</h2>
-      <p>What can go wrong will go wrong</p>
+      <h1>You know what to Expect...</h1>
+      <a href="../week05/assign05.html" class="button warm-glow">
+        <h2>You Area A Winner!</h2>
+        <p>You Have Been Invited!</p>
+      </a>
     </section>
   </div>
+
+  <!--  Advertise - or display nothing, depends on page  -->
   <div class="right"></div>
+
+  <!--  The Foot, Leagal stuff and *Assignment Index* link -->
   <div class="footer">
     <p>Footer</p>
-    <a href="../index.html">Assignment Index</a>
+    <a href="../index.html" class="button warm-glow">Assignment Index</a>
   </div>
 </section>
 </body>
