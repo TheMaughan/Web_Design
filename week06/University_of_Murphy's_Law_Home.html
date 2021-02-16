@@ -33,7 +33,7 @@
  #grid-container {
     display: grid;
     grid-template-areas: 
-      'left header header header header header' 
+      'header header header header header header' 
       'left middle middle middle middle right' 
       'footer footer footer footer footer';
   } 
@@ -64,9 +64,17 @@
 
   <!--  Local Navigation, Playing with 'Sticky' positioning -->
   <section id="left">
-    <a id="left" href="#">University</a>
-    <a id="left" href="#UML Logic">UML Logic</a>
-    <a id="left" href="#Enroll-Today">Enroll Today!</a>
+    <div>
+      <a id="left" href="#">University</a>
+    </div>
+    <div>
+      <a id="left" href="#UML Logic">UML Logic</a>
+    </div>
+    <div>
+      <a id="left" href="#Enroll-Today">Enroll Today!</a>
+    </div>
+    
+    
     <!--  The 'margin-top' helps with link spacing -->
     <a id="left" style="margin-top: 700px;" href="#Learn">Learn More</a>
   </section>
@@ -76,7 +84,7 @@
 
     <!--  The UML Logic Section - Expect Murphy's Law  -->
     <section class="container-b info-blue rain b-cover" id="content">
-      <h2 class="txt-big" id="UML Logic" style="margin-top: -10%;">Expect What Outcome?</h2>
+      <h2 class="txt-big" id="UML Logic" style="margin-top: -10%;">Murphy's Law</h2>
       <div>
         <p style="margin-left: 60%;">What can to wrong</p>
       </div>

@@ -21,7 +21,6 @@
     justify-content: center;
     font-size: 50px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color:rgba(255, 255, 255, 0.096)!important;
   }
   /*--- Alignment ---*/
   .h-start {
@@ -36,10 +35,9 @@
   .h-center {
     display: flex;
     justify-content: center;
-    position: fixed;
+    position: absolute;
     text-align: center;
-    top: 50%;
-    text-shadow: 1px 1px 2px black;
+    text-shadow: 3px 3px 5px black;
   }
   .h-end {
     display: flex;
@@ -97,6 +95,7 @@
     padding: 10px;
     height: 400px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 8px;
   }
 
   #content h1, h2 {
@@ -116,13 +115,13 @@
   #c-grid {
     display: grid;
     grid-template-areas: 
-      'top top'
-      'L-side R-side';
+      'top top top'
+      'L-side mid R-side';
     border:rgba(47, 46, 92, 0.4);
     justify-items: center;
     text-align: center;
     padding: 10px;
-    height: 400px;
+    height: fit-content;
   }
 
   .top {
@@ -138,6 +137,9 @@
     width: 300px;
     margin-bottom: 40px;
     border-radius: 16px;
+  }
+  .mid {
+    display: grid;
   }
   .R-side{
     grid-area: R-side;
@@ -253,6 +255,10 @@
       height: 100px;
    }
 
+   .custom-select {
+    font-family: Arial;
+  }
+
   /* ------------------------------------------------------ */
   /* --- Grid Layout --- */
   /* The grid container */
@@ -268,6 +274,9 @@
   #left {
     grid-area: left;
     background-color: #111;
+    position: sticky;
+    top: 0;
+    bottom: 0;
   }
   
   
@@ -283,8 +292,6 @@
     text-decoration: none;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     overflow: hidden;
-    position: sticky;
-      top: 0;
   }
   
   /* Change color on hover */

@@ -5,9 +5,45 @@
     <meta name="description" content="Murphy's Law School - Expect the Obvious Result">
     <link rel="stylesheet" type="text/css" href="./University.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Murphy's Law and Athletics</title>
+    <title>University of Murphy's Athletics</title>
 <style>
+#header {
+  background-image: url('./Pictures/Never-Forget.jpg');
+  height: 400px;
+}
 
+.h-start {
+  top: 5%;
+}
+.h-end {
+  bottom: 40%;
+}
+
+.middle {
+  background-image: url('./Pictures/m-l-s_logo.jpg');
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.9);
+  opacity: 0.9;
+}
+
+.twenty {
+  display: flex;
+  background-image: url('./Pictures/Welcome-2020.jpg');
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.gladiators {
+  background-image: url('./Pictures/major-league-gladiators.jpg');
+  color: #f1f1f1;
+}
+
+ /* The grid container */
+ #grid-container {
+    display: grid;
+    grid-template-areas: 
+      'left header header header header header' 
+      'left middle middle middle middle right' 
+      'footer footer footer footer footer';
+  } 
 </style>
 
 <script src="#"></script>
@@ -18,32 +54,97 @@
 
 <section id="topnav">
   <a href="./University_of_Murphy's_Law_Home.html">
-    <img src="./law-school_little-pic.jpg" alt="University of Murphy's Law" width="100">
+    <img src="./Pictures/law-school_little-pic.jpg" alt="University of Murphy's Law" width="100">
   </a>
   <a href="./University_of_Murphy's_Academics.html">Academics</a>
   <a href="./University_of_Murphy's_Arts.html">Arts</a>
   <a href="./University_of_Murphy's_Athletics.html">Athletics</a>
 </section>
 
+<!--  Header of Page, Welcome :)  -->
 <section id="grid-container">
-  <div class="header">
-    <h2>Header</h2>
-  </div>
+
+  <section id="header" class="b-cover">
+    <h2 class="h-start warm-glow">Athletics at</h2>
+    <h4 class="h-end warm-glow">Murphy's Law</h4>
+  </section>
+
+  <!--  Local Navigation, Playing with 'Sticky' positioning -->
   <section id="left">
     <a id="left" href="#">University</a>
-    <a id="left" href="#">UML News</a>
-    <a id="left" href="#">Enroll Today!</a>
+    <a id="left" href="#UML Logic">UML Logic</a>
+    <a id="left" href="#Enroll-Today">Enroll Today!</a>
+    <!--  The 'margin-top' helps with link spacing -->
+    <a id="left" style="margin-top: 700px;" href="#Learn">Learn More</a>
   </section>
-  <div class="middle" style="background-color:#bbb;">Column
-    <div class="content">
-      <h2>CSS Template</h2>
-      <p>A full-height, fixed sidenav and content.</p>
+
+  <!--  Main Content Container  -->
+  <div class="middle b-contain">
+
+    <!--  The Game  -->
+    <section class="container-b info-blue twenty b-cover" id="content">
+    </section>
+    <!-- Grid Space -->
+    <section id="c-grid">
+      <div class="top">
+        <h2 class="txt-big">Don't miss the Big Game!</h2>
+      </div>
+      <div>
+        <img class="L-side" src="./Pictures/university-of-pangaea.png" alt="UOP">
+        <h3>Gladiator Fights This Weekend!</h3>
+      </div>
+      <div>
+        <h2 class="txt-big mid">VS</h2>
+      </div>
+      <div>
+        <img class="R-side" src="./Pictures/m-l-s_logo.jpg" alt="UML">
+      </div>
+    </section>
+
+    <!-- Advertise container -->
+    <div class="container-b warm-glow gladiators b-contain">
     </div>
-  </div>  
-  <div class="right" style="background-color:#ccc;">Column</div>
+      
+    <!-- Grid Space -->
+    <section id="c-grid">
+      <div class="top">
+        <h2 class="txt-big">Don't miss the Big Event!</h2>
+      </div>
+      <div>
+        <img class="L-side" src="./Pictures/IMG_1774.jpg" alt="UOP">
+        <h2>Cliff Jumping!</h2>
+      </div>
+      <div>
+        <h2 class="txt-big mid">VS</h2>
+      </div>
+      <div>
+        <img class="R-side" src="./Pictures/m-l-s_logo.jpg" alt="UML">
+      </div>
+    </section>
+
+    <!-- Grid Space -->
+    <section id="c-grid">
+      <div class="top">
+        <h2 id="Learn" class="txt-big">Sign Up For Events Here</h2>
+      </div>
+      <div>
+        <a href="../week05/assign05.html">
+          <img class="L-side" src="./Pictures/IMG_0749.jpg" alt="Conspiracy Dealer">
+        </a>
+      </div>
+      <a href="../week05/assign05.html">
+        <img class="R-side" src="./Pictures/IMG_0205.jpg" alt="Conspiracy Dealer">
+      </a>      
+    </section>
+  </div>
+
+  <!--  Advertise - or display nothing, depends on page  -->
+  <div class="right"></div>
+
+  <!--  The Foot, Leagal stuff and *Assignment Index* link -->
   <div class="footer">
     <p>Footer</p>
-    <a href="../index.html">Assignment Index</a>
+    <a href="../index.html" class="button warm-glow">Assignment Index</a>
   </div>
 </section>
 </body>

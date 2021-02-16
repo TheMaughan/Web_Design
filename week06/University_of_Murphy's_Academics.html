@@ -5,9 +5,48 @@
     <meta name="description" content="Murphy's Law School - Expect the Obvious Result">
     <link rel="stylesheet" type="text/css" href="./University.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Murphy's Law and Academics</title>
+    <title>University of Murphy's Academics</title>
 <style>
+#header {
+  background-image: url('./Pictures/IMG_0018.jpg');
+  height: 400px;
+}
 
+.h-start {
+  top: 5%;
+}
+.h-end {
+  bottom: 40%;
+}
+
+.middle {
+  background-image: url('./Pictures/m-l-s_logo.jpg');
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.9);
+  opacity: 0.9;
+}
+
+.air-con {
+  display: flex;
+  background-image: url('./Pictures/IMG_1483.jpg');
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.bacon {
+  background-image: url('./Pictures/IMG_2566.jpg');
+  color: #f1f1f1;
+}
+.candy-science {
+  background-image: url('./Pictures/IMG_0021.jpg');
+}
+
+ /* The grid container */
+ #grid-container {
+    display: grid;
+    grid-template-areas: 
+      'left header header header header header' 
+      'left middle middle middle middle right' 
+      'footer footer footer footer footer';
+  } 
 </style>
 
 <script src="#"></script>
@@ -18,32 +57,109 @@
 
 <section id="topnav">
   <a href="./University_of_Murphy's_Law_Home.html">
-    <img src="./law-school_little-pic.jpg" alt="University of Murphy's Law" width="100">
+    <img src="./Pictures/law-school_little-pic.jpg" alt="University of Murphy's Law" width="100">
   </a>
   <a href="./University_of_Murphy's_Academics.html">Academics</a>
   <a href="./University_of_Murphy's_Arts.html">Arts</a>
   <a href="./University_of_Murphy's_Athletics.html">Athletics</a>
 </section>
 
+<!--  Header of Page, Welcome :)  -->
 <section id="grid-container">
-  <div class="header">
-    <h2>Header</h2>
-  </div>
+
+  <section id="header" class="b-cover">
+    <h2 class="h-start warm-glow">Academics at</h2>
+    <h4 class="h-end warm-glow">Murphy's Law</h4>
+  </section>
+
+  <!--  Local Navigation, Playing with 'Sticky' positioning -->
   <section id="left">
     <a id="left" href="#">University</a>
-    <a id="left" href="#">What to Expect</a>
-    <a id="left" href="#">Enroll Today!</a>
+    <a id="left" href="#UML Logic">UML Logic</a>
+    <a id="left" href="#Enroll-Today">Enroll Today!</a>
+    <!--  The 'margin-top' helps with link spacing -->
+    <a id="left" style="margin-top: 700px;" href="#Learn">Learn More</a>
   </section>
-  <div class="middle" style="background-color:#bbb;">Column
-    <div class="content">
-      <h2>CSS Template</h2>
-      <p>A full-height, fixed sidenav and content.</p>
+
+  <!--  Main Content Container  -->
+  <div class="middle b-contain">
+
+    <!--  Outdoors...  -->
+    <section class="container-b info-blue air-con b-contain" id="content">
+    </section>
+
+    <!--News-->
+    <section id="c-grid">
+      <div>
+        <h2>Student Discovers Bacon!</h2>
+      </div>
+      <div>
+        <h4>Student Get's Bacon Award!</h4>
+      </div>
+    </section>
+    <!--  The Bacon  -->
+    <section class="bacon container-b b-contain" id="content" id="c-grid">
+    </section>
+
+    <!-- Advertise container -->
+    <div class="container-b candy-science b-cover" style="height: 600px;">
     </div>
-  </div>  
-  <div class="right" style="">Column</div>
+      
+    <!-- Grid Space -->
+    <section id="c-grid" class="info-red">
+      <div class="top">
+        <h2 class="txt-big">Study Hall Signups</h2>
+      </div>
+      <div>
+        <img class="L-side" src="./Pictures/IMG_2559.jpg" alt="Test-vs-red_pen">
+        <h2>If you don't pass your classes, you will participate in Cliff Jumping!</h2>
+      </div>
+      <div>
+        <div class="custom-select R-side" style="width:200px;">
+          <select>
+            <option value="0">You Identify As...</option>
+            <option value="1">Incognito</option>
+            <option value="2">Myself</option>
+            <option value="3">Instructor</option>
+            <option value="4">Destructor</option>
+            <option value="5">CIA</option>
+            <option value="6">Crawller</option>
+            <option value="7">SJW -> Triggered</option>
+            <option value="8">Computer Whisperer</option>
+            <option value="9">Computer Yeller</option>
+            <option value="10">Troll</option>
+            <option value="11">Influencer</option>
+            <option value="12">Onion</option>
+          </select>
+          <p class="button">Sign Up</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grid Space -->
+    <section id="c-grid">
+      <div class="top">
+        <h2 id="Learn" class="txt-big">Time Conventions</h2>
+      </div>
+      <div>
+        <a href="../week05/assign05.html">
+          <img class="L-side" src="./Pictures/time_convention.jpg" alt="Convention">
+        </a>
+      </div>
+      <div>
+        <img class="R-side" src="./Pictures/history.jpg" alt="History">
+        <h3>Come Alter History!</h3>
+      </div>
+    </section>
+  </div>
+
+  <!--  Advertise - or display nothing, depends on page  -->
+  <div class="right"></div>
+
+  <!--  The Foot, Leagal stuff and *Assignment Index* link -->
   <div class="footer">
     <p>Footer</p>
-    <a href="../index.html">Assignment Index</a>
+    <a href="../index.html" class="button warm-glow">Assignment Index</a>
   </div>
 </section>
 </body>
