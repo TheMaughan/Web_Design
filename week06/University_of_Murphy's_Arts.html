@@ -32,8 +32,8 @@
   background-image: url('../web-pictures/IMG_2554.jpg');
   color: #f1f1f1;
 }
-.candy-science {
-  background-image: url('../web-pictures/IMG_0021.jpg');
+.floppy {
+  background-image: url('../web-pictures/IMG_2553.jpg');
 }
 
  /* The grid container */
@@ -56,9 +56,11 @@
   <a href="./University_of_Murphy's_Law_Home.html">
     <img src="../web-pictures/law-school_little-pic.jpg" alt="University of Murphy's Law" width="100">
   </a>
-  <a href="./University_of_Murphy's_Academics.html">Academics</a>
-  <a href="./University_of_Murphy's_Arts.html">Arts</a>
-  <a href="./University_of_Murphy's_Athletics.html">Athletics</a>
+  <div id="topnav">
+    <a href="./University_of_Murphy's_Academics.html">Academics</a>
+    <a href="./University_of_Murphy's_Arts.html">Arts</a>
+    <a href="./University_of_Murphy's_Athletics.html">Athletics</a>
+  </div>
 </section>
 
 <!--  Header of Page, Welcome :)  -->
@@ -70,9 +72,9 @@
 
   <!--  Local Navigation, Playing with 'Sticky' positioning -->
   <section id="left">
-    <a id="left" href="#">University</a>
-    <a id="left" href="#UML Logic">UML Logic</a>
-    <a id="left" href="#Enroll-Today">Enroll Today!</a>
+    <a id="left" href="#drama">Drama</a>
+    <a id="left" href="#UML Logic">Concert</a>
+    <a id="left" href="#">Back to Top</a>
     <!--  The 'margin-top' helps with link spacing -->
     <a id="left" style="margin-top: 700px;" href="#Learn">Learn More</a>
   </section>
@@ -99,7 +101,7 @@
     </section>
 
      <!-- Grid Space -->
-     <section id="c-grid" class="info-red">
+     <section id="c-grid" class="info-red" id="drama">
       <div class="top">
         <h2 class="txt-big">Drama Departmet</h2>
         <h3>Nightly Shows</h3>
@@ -127,60 +129,28 @@
     <section id="c-grid">
       <div class="container-b happy b-cover fit">
       </div>
-      <div class="hover-glow">
+      <div class="hover-glow box-fit">
         <h2>Weekend Concert</h2>
-        <h3>Saturday | 8 - 11 pm</h3>
+        <h2>_______________</h2>
+        <h3>SEROTONIN</h3>
+        <p>Saturday | 8 - 11 pm | OOPS Bldg 1 - A</p>
+        <h3>FLOPPY DISKS</h3>
+        <p>Saturday | 9 - 12 pm | East Gardens Event Area</p>
+      </div>
+    </section>
+         
+    <!-- Advertise container -->
+    <section id="c-grid">
+      <div class="container-b floppy b-cover fit">
+      </div>
+      <div class="hover-glow box-fit">
+        <h2 class="s-button">RSVP Your Tickets Here</h2>
           <p>Student Price --- $3.00</p>
           <p>Everybody Else Price --- $30.00</p>
       </div>
     </section>
-         
-    <!-- Grid Space -->
-    <section id="c-grid" class="info-red">
-      <div class="top">
-        <h2 class="txt-big">Study Hall Signups</h2>
-      </div>
-      <div>
-        <img class="L-side" src="../web-pictures/IMG_2559.jpg" alt="Test-vs-red_pen">
-        <h2>If you don't pass your classes, you will participate in Cliff Jumping!</h2>
-      </div>
-      <div>
-        <div class="custom-select R-side" style="width:200px;">
-          <select>
-            <option value="0">You Identify As...</option>
-            <option value="1">Incognito</option>
-            <option value="2">Myself</option>
-            <option value="3">Instructor</option>
-            <option value="4">Destructor</option>
-            <option value="5">CIA</option>
-            <option value="6">Crawller</option>
-            <option value="7">SJW -> Triggered</option>
-            <option value="8">Computer Whisperer</option>
-            <option value="9">Computer Yeller</option>
-            <option value="10">Troll</option>
-            <option value="11">Influencer</option>
-            <option value="12">Onion</option>
-          </select>
-          <p class="button">Sign Up</p>
-        </div>
-      </div>
-    </section>
 
-    <!-- Grid Space -->
-    <section id="c-grid">
-      <div class="top">
-        <h2 id="Learn" class="txt-big">Time Conventions</h2>
-      </div>
-      <div>
-        <a href="../week05/assign05.html">
-          <img class="L-side" src="../web-pictures/time_convention.jpg" alt="Convention">
-        </a>
-      </div>
-      <div>
-        <img class="R-side" src="../web-pictures/history.jpg" alt="History">
-        <h3>Come Alter History!</h3>
-      </div>
-    </section>
+    
   </div>
 
   <!--  Advertise - or display nothing, depends on page  -->

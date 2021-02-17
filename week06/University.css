@@ -244,6 +244,8 @@
     justify-content: center;
   }
 
+  .box-fit {height: fit-content; border-radius: 4px;}
+
   /* --- User Interaction: --- */
   /* For generic buttons */
   .button {
