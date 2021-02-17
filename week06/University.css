@@ -181,6 +181,7 @@
   .warm-glow {
     text-shadow:  0 0 25px orange, 0 0 5px orangered;
   }
+  .bk-override{color: black;}
 
   .b-cover {
     background-blend-mode: screen;
@@ -234,7 +235,14 @@
     text-shadow: 0px 0px 0.1px blue;
     border-radius: 4px;
   }
- 
+  .fit {
+    min-width: 500px;
+    max-width: 1000px;
+  }
+  .txt-center {
+    text-align: center;
+    justify-content: center;
+  }
 
   /* --- User Interaction: --- */
   /* For generic buttons */
