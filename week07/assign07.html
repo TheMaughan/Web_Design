@@ -14,7 +14,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Murphy's Law School - Expect the Obvious Result">
-    <link rel="stylesheet" type="text/css" href="./University.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Morgage Calculator</title>
 <style>
@@ -85,9 +84,7 @@
 <!--  Header of Page, Welcome :)  -->
 <section id="grid-container">
 
-  <section id="header" class="b-cover">
-    <h2 class="h-center warm-glow">University Arts</h2>
-  </section>
+  
 
   <!--  Local Navigation, Playing with 'Sticky' positioning -->
   <section id="left">
@@ -151,27 +148,12 @@
           </div>
           <div>
             <button id="btn" class="i-s-button i-hover-glow">Calculate!</button>
-            <button onclick="deleteItems()" class="i-s-button i-hover-glow">Clear</button>
+            <button id="btn_2" onclick="deleteItems()" class="i-s-button i-hover-glow">Clear</button>
           </div>
           <ul id="output_2">
           </ul>
         </form>
-
-          <script src="Multiple.js"></script>
-          <script>
-              // Display objects for Multiples Calculator here:
-              document.getElementById("output_1").innerHTML = c.display_1();
-              
-
-              function deleteItems() {
-                var x = document.getElementById("output_2");
-                while (x.hasChildNodes()) {
-                    x.removeChild(x.firstChild);
-                }
-              }
-              document.getElementById("textarea_1").maxLength = "4";
-              
-          </script>
+        <script src="Multiple.js"></script>
       </div>
     </section>
   </div>
@@ -186,6 +168,4 @@
   </div>
 </section>
 </body>
-</html>
-  </body>
 </html>
