@@ -1,19 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-  <h1>This will be assignment #8</h1>
-  <p>This is a starting template</p>
-
-  <a href="../index.html">Assignment Index</a>
-
-  <canvas id="gc" width="400" height="400"></canvas>
-
-<script>
 
 window.onload=function() {
 
@@ -146,8 +130,3 @@ function keyPush(evt) {
     }
 
 }
-
-</script>
-
-</body>
-</html>
