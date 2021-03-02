@@ -326,11 +326,13 @@
   .footer {
     grid-area: footer;
     background-color: #7a7a7a;
-    background-image: linear-gradient(to bottom right, rgba(255, 217, 0, 0.219), rgba(255, 17, 0, 0.199));
+    background-image: linear-gradient(to bottom right, rgb(10, 10, 10), rgba(0, 0, 0, 0.199));
     padding: 10px;
     text-align: center;
     z-index: 1;
+    color: white;
   }
+ 
   
   /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
   @media (max-width: 600px) {
