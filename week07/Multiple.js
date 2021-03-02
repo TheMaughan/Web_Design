@@ -58,14 +58,22 @@ function addNumber() {
 
 textarea_1.oninput = function() {
     output_1.innerHTML = textarea_1.value;
-    var element = textarea_1.value;
+}
+
+var c = new Multiple_Num(9, 10);
+
+let form = document.forms.calculator;
+
+var num = form.multi_num.oninput;
+
+function calculate() {
+    let initial = +form.multi_num.value;
+    if (!initial) return;
 }
 
 
 
-document.getElementById('input').innerHTML;
 
-var c = new Multiple_Num(9, 10);
 
 document.getElementById("output_1").innerHTML = c.display_1();
 
