@@ -1,5 +1,5 @@
 
-
+//import React from 'react';
 // Create objects here:
 
 
@@ -12,32 +12,15 @@ var person = {
       return this.firstName + " " + this.lastName;
     }
 };
-class Multiple_Num {
-    constructor(multi_num, loop_num) {
-        this.multiple = multi_num;
-        this.loop_num = loop_num;
 
-        this.display_1 = function(){
-            return "You Entered: " + this.multiple;
-        }
-        this.display_2 = function() {
-            var text = "";
-            for(var i=1; i<=this.loop_num; i++) {
-                text +=  i + " * " + this.multiple + " = " + i*this.multiple + "<br>";
-            }
-            return text
-        }
-    }
-}
+
 // Display objects for Multiples Calculator here:
   
 
   //document.getElementById("demo").innerHTML = person.fullName();
-  //document.getElementById("Calculator").innerHTML =;
 //let num_inputs = [];
 /*
-const addNumber = (ev)=>{
-    ev.preventDefault();
+
     var number = document.getElementById('textarea_1').value;
     var c = new Multiple_Num(number, 10);
     document.getElementById("output_1").innerHTML = c.display_1();
@@ -45,31 +28,67 @@ const addNumber = (ev)=>{
     //num_inputs.push(number);
     //document.forms[0].reset();
 
-document.addEventListener('DOMContentLoaded', ()=>{
-    document.getElementById('btn').addEventListener('click', addNumber);
-    document.getElementById('btn_2').addEventListener('click', addNumber);
-});
 
-function addNumber() {
-    var number = document.getElementById('textarea_1').value;
-    return number;
-}
 */
 
-textarea_1.oninput = function() {
-    output_1.innerHTML = textarea_1.value;
-}
+const addNumber = (ev)=>{
+    ev.preventDefault();
+    document.getElementById("output_2").innerHTML = c.display_2();
 
+};
+const deleteItems = (ev)=>{
+    ev.preventDefault();
+    var x = document.getElementById("output_2");
+    while (x.hasChildNodes()) {
+        x.removeChild(x.firstChild);
+    }
+};
+
+const live_update = (ev)=>{
+    function update(textarea_1) { // This should update class parameters...
+        num = parseFloat(textarea_1, 10);
+        //document.getElementById("test").innerHTML = num;
+        document.getElementById("test_2").innerHTML = num;
+        //This is a class:
+        class Multiple_Num {
+          constructor(multi_num, loop_num) {
+              this.multiple = multi_num;
+              this.loop_num = loop_num;
+      
+              this.display_1 = function(){
+                  return "You Entered: " + this.multiple;
+              }
+              this.display_2 = function() {
+                  var text = "";
+                  for(var i=1; i<=this.loop_num; i++) {
+                      text +=  i + " * " + this.multiple + " = " + i*this.multiple + "<br>";
+                  }
+                  return text
+              }
+          }// End of class
+        }
+      };
+}
 var c = new Multiple_Num(9, 10);
+  
 
-let form = document.forms.calculator;
+document.addEventListener('DOMContentLoaded', ()=>{
+    document.getElementById('btn').addEventListener('click', addNumber);
+    document.getElementById('btn_2').addEventListener('click', deleteItems);
+    document.getElementById('textarea_1').addEventListener('keyup', live_update);
+});
 
-var num = form.multi_num.oninput;
+///////// This is for live updating user input:
+var form = document.forms.calculator;
+form.textarea_1.oninput = live;
 
-function calculate() {
-    let initial = +form.multi_num.value;
-    if (!initial) return;
-}
+
+//Object.setPrototypeOf(Multiple_Num.prototype, number);
+
+function live() { //- This updates text... for now
+  test.innerHTML = textarea_1.value;
+  num = textarea_1.value;
+};
 
 
 
@@ -77,14 +96,5 @@ function calculate() {
 
 document.getElementById("output_1").innerHTML = c.display_1();
 
-
-function click_display() {
-    document.getElementById("output_2").innerHTML = c.display_2();
-}    
-function deleteItems() {
-    var x = document.getElementById("output_2");
-    while (x.hasChildNodes()) {
-        x.removeChild(x.firstChild);
-    }
-  }
-  document.getElementById("textarea_1").maxLength = "4";
+live();
+update();
