@@ -10,6 +10,7 @@ const deleteItems = (ev)=>{// When mouse clicks on button_2
         y.removeChild(y.firstChild);
     }
     document.forms[0].reset();
+    document.getElementById('textarea_1').focus()
     
 };
 const live_update = (ev)=>{ // When Key event happens, execute this code:
