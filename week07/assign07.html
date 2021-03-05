@@ -16,7 +16,7 @@
 .middle {
   background-image: url('../web-pictures/m-l-s_logo.jpg');
   background-attachment: fixed;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.5);
   opacity: 0.9;
   height: 700px;
 }
@@ -63,13 +63,13 @@
         <form name="calculator">
           <div id="c-grid">
             <label for="textarea_1">Multiples of...</label>
-            <input name="textarea_1" type="number" id="textarea_1"/><br>
+            <input name="textarea_1" type="number" id="textarea_1" placeholder="Enter Number..."/><br>
           </div>
           <div>
             <button id="btn_1" class="i-s-button i-hover-glow">Clear</button>
           </div>
           <div>
-            <p id="output_1"></p>
+            <p id="output_1">Hint: Example mortgage calculator input: APR: 5.25, Loan Term: 10, Amount 100000, Month Payment:  1072.92.</p>
             <ul id="output_2"></ul>
           </div>
           
@@ -84,14 +84,14 @@
           <div id="c-grid">
             <div class="s-flex">
               <ul>
-                  <p><b>APR (Annual Percentage Rate)</b>: <input name="apr" type="number" id="apr"/></p>
-                  <p>APR range: 0% - 25% ---> <label for="apr" id="apr_error"></label></p><br>
+                  <p><b>APR (Annual Percentage Rate)</b>: <input name="apr" type="number" id="apr" value="5.25" placeholder="APR range: 0% - 25%"/></p>
+                  <label for="apr" id="apr_error"></label><br>
 
-                  <p><b>Lone Term (In Years)</b>: <input name="term" type="number" id="term"/></p>
-                  <p>Max Years is 40 ---> <label for="term" id="term_error"></label></p><br>
+                  <p><b>Lone Term (In Years)</b>: <input name="term" type="number" id="term" value="10" placeholder="Max Years is 40"/></p>
+                  <label for="term" id="term_error"></label><br>
 
-                  <p><b>Lone Ammount</b>: <input name="amount" type="number" id="amount"/></p>
-                  <p>Ammount Entered:<label for="amount" id="amount_error"></label></p><br>
+                  <p><b>Lone Ammount</b>: <input name="amount" type="number" id="amount" value="100000" placeholder="$0.00"/></p>
+                  <label for="amount" id="amount_error"></label><br>
               </ul>
             </div>
           </div>

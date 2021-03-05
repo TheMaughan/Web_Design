@@ -6,8 +6,10 @@ const calculate = (ev)=>{
     let t = term.value;
     let amnt = amount.value;
 
-    const interest = (amnt * (a * 0.01)) / t;
-    let payment = ((amnt * t) + interest).toFixed(2);
+    t *= 12;
+    a /= 1200;
+    amnt *= (a * ((1 + a) ** t)) / (((1 + a) ** t) - 1);
+    let payment = amnt.toFixed(2);
 
     //\B looks for a word boundary, ? says what to look for, \d looks for 3 digits in a row:
     payment = payment.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -17,35 +19,65 @@ const calculate = (ev)=>{
 
 const clear = (ev)=>{// When mouse clicks on button_2
     ev.preventDefault();
-    var x = document.getElementById("apr_error");
-    var t = document.getElementById("term_error");
-    var a = document.getElementById("amount_error");
-    var y = document.getElementById("payment");
-    while (x.hasChildNodes()) {
-        x.removeChild(x.firstChild);
+    //clear apr 
+    document.getElementById("apr").value = " ";
+    const apr_er = document.getElementById("apr_error");
+    while (apr_er.hasChildNodes()) {
+        apr_er.removeChild(apr_er.firstChild);
     }
-    while (y.hasChildNodes()) {
-        y.removeChild(y.firstChild);
+    //clear term
+    document.getElementById("term").value = " ";
+    const term_er = document.getElementById("term_error");
+    while (term_er.hasChildNodes()) {
+        term_er.removeChild(term_er.firstChild);
+        //document.getElementById('apr').inputField.value = " ";
     }
-    while (t.hasChildNodes()) {
-        t.removeChild(x.firstChild);
+    //clear amount
+    document.getElementById("amount").value = " ";
+    const amount_er = document.getElementById("amount_error");
+    while (amount_er.hasChildNodes()) {
+        amount_er.removeChild(amount_er.firstChild);
     }
-    while (a.hasChildNodes()) {
-        a.removeChild(x.firstChild);
+    // clear payment
+    const pay_cl = document.getElementById("payment");
+    while (pay_cl.hasChildNodes()) {
+        pay_cl.removeChild(pay_cl.firstChild);
     }
-    document.forms[0].reset();
-    document.getElementById("apr").focus();
+    //inputField.value = " ";
+    //document.forms[0].reset();
+    document.getElementById("apr").focus(); // put cursor inside apr inputField
 };
-var update = (ev)=>{ // When Key-Release event happens, execute this code:
+
+
+
+
+const update = (ev)=>{ // When Key-Release event happens, execute this code:
     ev.preventDefault();
     let a = apr.value;
     let t = term.value;
     let amnt = amount.value;
 
-    document.getElementById('apr_error').innerHTML = a + "%";
-    document.getElementById('term_error').innerHTML = t + " years";
-
+    if (a < 0 || a > 25){
+        document.getElementById('apr').style.boxShadow = '0px 0px 10px red inset';
+        document.getElementById('apr_error').innerHTML = "You entered: " + a + "%, APR must be 0% - 25%";
+        document.getElementById("apr").value = " ";
+        document.getElementById("apr").focus();
+    } else {
+        document.getElementById('apr_error').innerHTML = a + "%";
+        document.getElementById('apr').style.boxShadow = 'none';
+    }
     
+    if (t < 0 || t > 40){
+        document.getElementById('term').style.boxShadow = '0px 0px 10px red inset';
+        document.getElementById('term_error').innerHTML = "You Entered: " + t + ", enter an input that is 0 - 40";
+        document.getElementById("term").value = " ";
+        document.getElementById("term").focus();
+    } else {
+        document.getElementById('term_error').innerHTML = t + " years";
+        document.getElementById('term').style.boxShadow = 'none';
+    }
+    
+
     amnt = amnt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     document.getElementById('amount_error').innerHTML = `$${amnt}`
     //document.getElementById('amount_error').innerHTML = "Amount Entered: $" + amnt;
