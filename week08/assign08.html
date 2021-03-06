@@ -2,46 +2,96 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <link href="./input.css" rel="stylesheet" type="text/css"/>
-  <link href="../global-layout.css" rel="stylesheet" type="text/css"/>
+  <link href="../globalStyle.css" rel="stylesheet" type="text/css"/>
   <meta name="description" content="Murphy's Law School - Expect the Obvious Result"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Morgage Calculator</title>
+  <title>Form Validator</title>
+  <style>
+    
+.middle {
+  /*background-image: url('../web-pictures/m-l-s_logo.jpg');*/
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.9);
+  opacity: 0.9;
+  height: 700px;
+  color: white;
+}
+.footer {
+  text-align: center;
+  color: white;
+  height: 227px;
+}
+
+ /* The grid container */
+ #grid-container {
+    display: grid;
+    grid-template-areas: 
+      'header header header header header header' 
+      'left middle middle middle middle right' 
+      'footer footer footer footer footer';
+  } 
+
+  input {
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: none;
+    
+  }
+  .c-grid {
+    display: grid;
+    grid-template-areas: 
+      'top top top'
+      'L-side mid R-side'
+      'bottom bottom bottom';
+    border:rgba(47, 46, 92, 0.4);
+    justify-items: center;
+    text-align: center;
+    padding: 10px;
+    height: fit-content;
+  }
+  .no-bull {
+    list-style-type: none;
+  }
+  </style>
 
 </head>
 
 <body>
+  <ul>
+    <li class="menu"><a class="active" href="../week02/assign02.html">Home</a></li>
+    <li class="dropdown">
+      <a href="../index.html" class="dropbtn">Assignment Index</a>
+      <div class="dropdown-content">
+        <a href="../week02/assign02.html">W-02 (HTML)</a>
+        <a href="../week03/assign03.html">W-03 (CSS)</a>
+        <a href="../week04/assign04.html">W-04 Used Ships!</a>
+        <a href="../week05/assign05.html">W-05 Invited!</a>
+        <a href="../week06/University_of_Murphy's_Law_Home.html">W-06 Enroll at UML!</a>
+        <a href="../week07/assign07.html">Morgage Calculator</a>
+        <a href="../week08/assign08.html">Form Validator</a>
+        <a href="../week09/assign09.html">Week 09</a>
+        <a href="../week10/assign10.html">Week 10</a>
+        <a href="../week11/assign11.html">Week 11</a>
+        <a href="../week12/assign12.html">Week 12</a>
+        <a href="../week13/assign13.html">Week 13</a>
+      </div>
+    </li>
+    <li style="float:right"><a class="active" href="about.html">About</a></li>
+  </ul>
 
 <!--  Header of Page, Welcome :)  -->
 <section id="grid-container">
-  <h2>Calculator Examples</h2>
+  <h2 class="center">Calculator Examples</h2>
 
   <!--  Local Navigation, Playing with 'Sticky' positioning -->
   <div id="left"></div>
      
       <!--  Main Content Container  -->
-  <div class="middle b-contain">
+  <div id="Main_body">
     <!-- Advertise container -->
     <section class="c-grid">
-      <div>
-        <h2>Multiples Calculator</h2>
-        <form name="calculator">
-          <div class="c-grid">
-            <label for="textarea_1">Multiples of...</label>
-            <input name="textarea_1" type="number" id="textarea_1" placeholder="Enter Number..."/><br>
-          </div>
-          <div>
-            <button id="btn_1" class="i-s-button i-hover-glow">Clear</button>
-          </div>
-          <div>
-            <p id="output_1"></p>
-            <ul class="no-bull" id="output_2"></ul>
-          </div>
-          
-        </form>
-        <script src="Multiple.js"></script>
-      </div>
-
       <!-- This section is for the assignment: -->
       <div>
         <h2>Morgage Calculator</h2>
@@ -66,19 +116,28 @@
           </div>
           <p id="test"></p>
           <p id="payment"></p>
-          <script src="m-calc.js"></script>
+          <script src="../week07/m-calc.js"></script>
         </form>
       </div>
+      <div>
+        <h2>Multiples Calculator</h2>
+        <form name="calculator">
+          <div class="c-grid">
+            <label for="textarea_1">Multiples of...</label>
+            <input name="textarea_1" type="number" id="textarea_1" placeholder="Enter Number..."/><br>
+          </div>
+          <div>
+            <button id="btn_1" class="i-s-button i-hover-glow">Clear</button>
+          </div>
+          <div>
+            <p id="output_1"></p>
+            <ul class="no-bull" id="output_2"></ul>
+          </div>
+          
+        </form>
+        <script src="validate.js"></script>
+      </div>
     </section>
-  </div>
-
-  <!--  Advertise - or display nothing, depends on page  -->
-  <div class="right"></div>
-
-  <!--  The Foot, Leagal stuff and *Assignment Index* link -->
-  <div class="footer">
-    <p>Footer</p>
-    <a href="../index.html" style="text-decoration: none; color: white;">Assignment Index</a>
   </div>
 </section>
 </body>

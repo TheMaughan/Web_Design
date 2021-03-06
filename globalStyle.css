@@ -17,8 +17,8 @@ body {
 /* For the main content area */
 #Main_body {
   background-color: rgba(0,0,0,.9);
-  width: 500px;
-  height: 1200px;
+  width: 75%;
+  height: 100%;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -85,7 +85,7 @@ body {
    }
 
    /* For generic buttons */
-  .button {
+  button {
     background-color: rgb(2, 119, 189);
     border: none;
     color: black;
@@ -100,19 +100,19 @@ body {
     font-family: Verdana,sans-serif;
     box-shadow: 0px 0px 10px #000000 inset;
 }
-.button {
+button {
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
 }
 
-.button:hover {
+button:hover {
     background-color: rgb(50, 133, 175); /* Green */
     color: white;
     box-shadow: 0px 0px 5px white inset;
 }
 
 /* For generic text areas */
-  .textarea{
+  textarea{
     text-align: center;
     display: block;
     margin: auto;
@@ -123,3 +123,7 @@ body {
       width: 250px;
       height: 100px;
    }
+.center {
+  text-align: center;
+  color: white;
+}
