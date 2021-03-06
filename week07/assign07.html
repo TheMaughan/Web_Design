@@ -7,40 +7,6 @@
   <meta name="description" content="Murphy's Law School - Expect the Obvious Result"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Morgage Calculator</title>
-<style>
-
-.h-center{
-  top: 10%;
-}
-
-.middle {
-  background-image: url('../web-pictures/m-l-s_logo.jpg');
-  background-attachment: fixed;
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: 0.9;
-  height: 700px;
-}
-.footer {
-  height: 227px;
-}
-
- /* The grid container */
- #grid-container {
-    display: grid;
-    grid-template-areas: 
-      'header header header header header header' 
-      'left middle middle middle middle right' 
-      'footer footer footer footer footer';
-  } 
-
-  #textarea_1 {
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    resize: none;
-  }
-</style>
 
 </head>
 
@@ -48,20 +14,19 @@
 
 <!--  Header of Page, Welcome :)  -->
 <section id="grid-container">
-
-  
+  <h2>Calculator Examples</h2>
 
   <!--  Local Navigation, Playing with 'Sticky' positioning -->
-  <section id="left"></section>
+  <div id="left"></div>
      
       <!--  Main Content Container  -->
   <div class="middle b-contain">
     <!-- Advertise container -->
-    <section id="c-grid">
+    <section class="c-grid">
       <div>
         <h2>Multiples Calculator</h2>
         <form name="calculator">
-          <div id="c-grid">
+          <div class="c-grid">
             <label for="textarea_1">Multiples of...</label>
             <input name="textarea_1" type="number" id="textarea_1" placeholder="Enter Number..."/><br>
           </div>
@@ -70,7 +35,7 @@
           </div>
           <div>
             <p id="output_1"></p>
-            <ul id="output_2"></ul>
+            <ul class="no-bull" id="output_2"></ul>
           </div>
           
         </form>
@@ -81,17 +46,17 @@
       <div>
         <h2>Morgage Calculator</h2>
         <form name="morgage_calculator">
-          <div id="c-grid">
+          <div class="c-grid">
             <div class="s-flex">
-              <ul>
-                  <p><b>APR (Annual Percentage Rate)</b>: <input name="apr" type="number" id="apr" value="5.25" placeholder="APR range: 0% - 25%"/></p>
-                  <label for="apr" id="apr_error"></label><br>
+              <ul class="no-bull">
+                  <li><b>APR (Annual Percentage Rate)</b>: <input name="apr" type="number" id="apr" value="5.25" step=".01" placeholder="APR range: 0.00% - 25.00%"/><br></li>
+                  <li><label for="apr" id="apr_error"></label><br></li>
 
-                  <p><b>Lone Term (In Years)</b>: <input name="term" type="number" id="term" value="10" placeholder="Max Years is 40"/></p>
-                  <label for="term" id="term_error"></label><br>
+                  <li><b>Lone Term (In Years)</b>: <input name="term" type="number" id="term" value="10" step="1" placeholder="Max Years is 40"/><br></li>
+                  <li><label for="term" id="term_error"></label><br></li>
 
-                  <p><b>Lone Ammount</b>: <input name="amount" type="number" id="amount" value="100000" placeholder="$0.00"/></p>
-                  <label for="amount" id="amount_error"></label><br>
+                  <li><b>Lone Ammount</b>: <input name="amount" type="number" id="amount" value="100000" step=".01" placeholder="$0.00"/><br></li>
+                  <li><label for="amount" id="amount_error"></label><br></li>
               </ul>
             </div>
           </div>
@@ -101,7 +66,6 @@
           </div>
           <p id="test"></p>
           <p id="payment"></p>
-          </ul>
           <script src="m-calc.js"></script>
         </form>
       </div>

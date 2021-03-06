@@ -1,11 +1,14 @@
+//JavaScript File
 // Morgage Calculator - Created for Week 07 assignment
 const calculate = (ev)=>{
     ev.preventDefault();
 
+    //Get the input node values:
     let a = apr.value;
     let t = term.value;
     let amnt = amount.value;
 
+    // Doing the Math:
     t *= 12;
     a /= 1200;
     amnt *= (a * ((1 + a) ** t)) / (((1 + a) ** t) - 1);
@@ -17,23 +20,23 @@ const calculate = (ev)=>{
     
 }
 
-const clear = (ev)=>{// When mouse clicks on button_2
+const clear = (ev)=>{// When mouse clicks on 'clear' button:
     ev.preventDefault();
     //clear apr 
-    document.getElementById("apr").value = " ";
+    document.getElementById("apr").value = null;
     const apr_er = document.getElementById("apr_error");
     while (apr_er.hasChildNodes()) {
         apr_er.removeChild(apr_er.firstChild);
     }
     //clear term
-    document.getElementById("term").value = " ";
+    document.getElementById("term").value = null;
     const term_er = document.getElementById("term_error");
     while (term_er.hasChildNodes()) {
         term_er.removeChild(term_er.firstChild);
         //document.getElementById('apr').inputField.value = " ";
     }
     //clear amount
-    document.getElementById("amount").value = " ";
+    document.getElementById("amount").value = null;
     const amount_er = document.getElementById("amount_error");
     while (amount_er.hasChildNodes()) {
         amount_er.removeChild(amount_er.firstChild);
@@ -45,41 +48,71 @@ const clear = (ev)=>{// When mouse clicks on button_2
     }
     //inputField.value = " ";
     //document.forms[0].reset();
-    document.getElementById("apr").focus(); // put cursor inside apr inputField
+    document.getElementById("apr").focus(); // put cursor inside apr input Field
 };
 
 
 
 
 const update = (ev)=>{ // When Key-Release event happens, execute this code:
-    ev.preventDefault();
+    ev.preventDefault();// don't refresh if button is pressed
+
+    //Get the node values:
     let a = apr.value;
     let t = term.value;
     let amnt = amount.value;
 
-    if (a < 0 || a > 25){
+    // APR input validation:
+    if (a < 0.00 || a > 25.00){
         document.getElementById('apr').style.boxShadow = '0px 0px 10px red inset';
         document.getElementById('apr_error').innerHTML = "You entered: " + a + "%, APR must be 0% - 25%";
-        document.getElementById("apr").value = " ";
+        document.getElementById("apr").value = null;
         document.getElementById("apr").focus();
+    } else if (a.includes(".")){ // Decimal input validation, only 2 decimal places allowed:
+        var numb = a.split(".")[1];
+        a = (a.indexOf(".") >= 0) ? (a.substr(0, a.indexOf(".")) + a.substr(a.indexOf("."), 3)) : a;
+        if(numb!=null && numb.length>2){
+            document.getElementById('apr').style.boxShadow = '0px 0px 10px red inset';
+            document.getElementById('apr_error').innerHTML = a + "% - Only 2 decimal places allowed";
+            //document.getElementById("apr").value = null;
+        } else {
+            document.getElementById('apr_error').innerHTML = a + "%";
+            document.getElementById('apr').style.boxShadow = 'none';
+        }
     } else {
         document.getElementById('apr_error').innerHTML = a + "%";
         document.getElementById('apr').style.boxShadow = 'none';
     }
     
+    // Term input validation
     if (t < 0 || t > 40){
         document.getElementById('term').style.boxShadow = '0px 0px 10px red inset';
         document.getElementById('term_error').innerHTML = "You Entered: " + t + ", enter an input that is 0 - 40";
-        document.getElementById("term").value = " ";
+        document.getElementById("term").value = null;
         document.getElementById("term").focus();
     } else {
         document.getElementById('term_error').innerHTML = t + " years";
         document.getElementById('term').style.boxShadow = 'none';
+        //t = (t.indexOf(".") >= 0) ? (t.substr(0, t.indexOf(".")) + t.substr(t.indexOf("."), 0)) : t;
     }
     
-
-    amnt = amnt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    document.getElementById('amount_error').innerHTML = `$${amnt}`
+    // ammount input validation, for decimal input only, no set max value:
+    amnt = amnt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); // Place ',' at each thousanth place
+    if (amnt.includes(".")){ // Decimal input validation, only 2 decimal places allowed:
+        var numb = amnt.split(".")[1];
+        amnt = (amnt.indexOf(".") >= 0) ? (amnt.substr(0, amnt.indexOf(".")) + amnt.substr(amnt.indexOf("."), 3)) : amnt;
+        if(numb!=null && numb.length>2){
+            document.getElementById('amount').style.boxShadow = '0px 0px 10px red inset';
+            document.getElementById('amount_error').innerHTML = `$${amnt} - Only 2 decimal places allowed`
+            //document.getElementById("amount").value = null;
+        } else {
+            document.getElementById('amount_error').innerHTML = `$${amnt}`
+            document.getElementById('amount').style.boxShadow = 'none';
+        }
+    } else {
+        document.getElementById('amount_error').innerHTML = `$${amnt}`
+        document.getElementById('amount').style.boxShadow = 'none';
+    }
     //document.getElementById('amount_error').innerHTML = "Amount Entered: $" + amnt;
 }
 
