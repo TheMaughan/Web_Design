@@ -121,21 +121,69 @@
       </div>
       <div>
         <h2>Multiples Calculator</h2>
-        <form name="calculator">
+        <form name="morgage_calculator">
           <div class="c-grid">
-            <label for="textarea_1">Multiples of...</label>
-            <input name="textarea_1" type="number" id="textarea_1" placeholder="Enter Number..."/><br>
+            <div class="s-flex">
+              <ul class="no-bull">
+                  <div class="c-grid">
+                    <li><input name="apr" type="text" id="apr" placeholder="First Name"/><br></li>
+                    <li><input name="term" type="text" id="term" placeholder="Second Name"/><br></li>
+                  </div>
+                  <li><label for="term" id="ln_output"></label><br></li>
+
+                  <div class="c-grid">
+                    <div><!-- Address Input -->
+                      <li><input name="add_1" type="text" id="amount"placeholder="Address 1"/><br></li>
+                      <li><input name="add_2" type="text" id="apr" placeholder="Address 2"/><br></li>
+                      <li><input name="city" type="text" id="term" placeholder="City"/><br></li>
+                      <li><input name="state" type="text" id="amount" placeholder="State/zip"/><br></li>
+                    </div>
+                    <div>
+                      <li><label id="address_output">Address Output</label><br></li>
+                      <li><label id="address_output">Address Output</label><br></li>
+                      <li><label id="address_output">Address Output</label><br></li>
+                      <li><label id="address_output">Address Output</label><br></li>
+                    </div>
+                  </div>
+                  <table>
+                      <tr>
+                        <th>Visa: <input name="apr" type="radio" id="visa()"/></th>
+                        <th>Master: <input name="apr" type="radio" id="master()"/></th>
+                        <th>Discover: <input name="apr" type="radio" id="discover()"/></th>
+                        <th>American Express: <input name="apr" type="radio" id="americaExpress()"/></th>
+                      </tr>
+                  </table>
+                  <table>
+                    <tr>
+                      <th>Credit Card Number: <input name="amount" type="number" id="amount" placeholder="1234 1234 1234 1234"/></th>
+                    </tr>
+                  </table>
+                  
+
+                  <li><b>item_1</b>: <input name="item_1" type="checkbox" id="item_1"/><br></li>
+                  <li><label for="apr" id="apr_error"></label><br></li>
+
+                  <li><b>item_2</b>: <input name="item_2" type="checkbox" id="item_2"/><br></li>
+                  <li><label for="apr" id="apr_error"></label><br></li>
+
+                  <li><b>item_3</b>: <input name="item_3" type="checkbox" id="item_3"/><br></li>
+                  <li><label for="apr" id="apr_error"></label><br></li>
+
+                  <li><b>item_4</b>: <input name="item_4" type="checkbox" id="item_4"/><br></li>
+                  <li><label for="apr" id="apr_error"></label><br></li>
+              </ul>
+            </div>
           </div>
           <div>
-            <button id="btn_1" class="i-s-button i-hover-glow">Clear</button>
-          </div>
-          <div>
-            <p id="output_1"></p>
-            <ul class="no-bull" id="output_2"></ul>
-          </div>
-          
-        </form>
-        <script src="validate.js"></script>
+            <button type="button" id="calculate" class="i-s-button i-hover-glow">Submit</button>
+            <button type="button" id="clear" class="i-s-button i-hover-glow">Reset</button>
+            <div>
+              <p id="display_reciptes"></p>
+              <ul class="no-bull" id="total"></ul>
+            </div>
+            
+          </form>
+          <script src="validate.js"></script>
       </div>
     </section>
   </div>
