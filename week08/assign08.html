@@ -54,6 +54,14 @@
   .no-bull {
     list-style-type: none;
   }
+
+  textarea { 
+    width: 200px;
+    height:150px;
+    line-height:20px;
+    padding-top: 20px;
+    text-align: left;
+}
   </style>
 
 </head>
@@ -83,7 +91,7 @@
 
 <!--  Header of Page, Welcome :)  -->
 <section id="grid-container">
-  <h2 class="center">Calculator Examples</h2>
+  <h2 class="center">Middle Earth Markets</h2>
 
   <!--  Local Navigation, Playing with 'Sticky' positioning -->
   <div id="left"></div>
@@ -93,74 +101,50 @@
     <!-- Advertise container -->
     <section class="c-grid">
       <!-- This section is for the assignment: -->
-      <div>
-        <h2>Morgage Calculator</h2>
-        <form name="morgage_calculator">
-          <div class="c-grid">
-            <div class="s-flex">
-              <ul class="no-bull">
-                  <li><b>APR (Annual Percentage Rate)</b>: <input name="apr" type="number" id="apr" value="5.25" step=".01" placeholder="APR range: 0.00% - 25.00%"/><br></li>
-                  <li><label for="apr" id="apr_error"></label><br></li>
-
-                  <li><b>Lone Term (In Years)</b>: <input name="term" type="number" id="term" value="10" step="1" placeholder="Max Years is 40"/><br></li>
-                  <li><label for="term" id="term_error"></label><br></li>
-
-                  <li><b>Lone Ammount</b>: <input name="amount" type="number" id="amount" value="100000" step=".01" placeholder="$0.00"/><br></li>
-                  <li><label for="amount" id="amount_error"></label><br></li>
-              </ul>
-            </div>
-          </div>
-          <div>
-            <button type="button" id="calculate" class="i-s-button i-hover-glow">Calculate</button>
-            <button type="button" id="clear" class="i-s-button i-hover-glow">Clear</button>
-          </div>
-          <p id="test"></p>
-          <p id="payment"></p>
-          <script src="../week07/m-calc.js"></script>
-        </form>
-      </div>
-      <div>
-        <h2>Multiples Calculator</h2>
-        <form name="morgage_calculator">
+        <h2>Market Items:</h2>
+        <form name="morgage_calculator" id="morgage_calculator">
           <div class="c-grid">
             <div class="s-flex">
               <ul class="no-bull">
                   <div class="c-grid">
-                    <li><input name="apr" type="text" id="apr" placeholder="First Name"/><br></li>
-                    <li><input name="term" type="text" id="term" placeholder="Second Name"/><br></li>
+                    <li><input name="first_name" type="text" id="first_name" placeholder="First Name" required/><br></li>
+                    <li><input name="last_name" type="text" id="last_name" placeholder="Second Name" required/><br></li>
                   </div>
-                  <li><label for="term" id="ln_output"></label><br></li>
+                  <li><p id="validate"></p><br></li>
 
                   <div class="c-grid">
                     <div><!-- Address Input -->
-                      <li><input name="add_1" type="text" id="amount"placeholder="Address 1"/><br></li>
-                      <li><input name="add_2" type="text" id="apr" placeholder="Address 2"/><br></li>
-                      <li><input name="city" type="text" id="term" placeholder="City"/><br></li>
-                      <li><input name="state" type="text" id="amount" placeholder="State/zip"/><br></li>
+                      <li>Shipping Address<br></li>
+                      <li><textarea name="address" type="textarea" id="address" cols="20" rows="10" required 
+                            placeholder="# Street,
+                                         (optional)Unit #,
+                                         City, State     zip"></textarea><br></li>
                     </div>
                     <div>
-                      <li><label id="address_output">Address Output</label><br></li>
-                      <li><label id="address_output">Address Output</label><br></li>
-                      <li><label id="address_output">Address Output</label><br></li>
-                      <li><label id="address_output">Address Output</label><br></li>
+                      <li><label for="phone" id="phone_label">Phone Number</label></li>
+                      <li><input name="phone" type="tel" inputmode="numeric" id="phone" maxlength="10" placeholder="123-456-7890" onkeyup="phoneHyphen(this)" onblur="ValidateInput()"><br></li>
                     </div>
                   </div>
                   <table>
                       <tr>
-                        <th>Visa: <input name="apr" type="radio" id="visa()"/></th>
-                        <th>Master: <input name="apr" type="radio" id="master()"/></th>
-                        <th>Discover: <input name="apr" type="radio" id="discover()"/></th>
-                        <th>American Express: <input name="apr" type="radio" id="americaExpress()"/></th>
+                        <!--th>Test:> <input name="card" type="radio" id="test"/></th-->
+                        <th>Visa:> <input name="card" type="radio" id="visa"/></th>
+                        <th>Master:> <input name="card" type="radio" id="master"/></th>
+                        <th>Discover:> <input name="card" type="radio" id="discover"/></th>
+                        <th>American Express:> <input name="card" type="radio" id="americaExpress"/></th>
                       </tr>
                   </table>
                   <table>
                     <tr>
-                      <th>Credit Card Number: <input name="amount" type="number" id="amount" placeholder="1234 1234 1234 1234"/></th>
+                      <th>Credit Card Number: <input name="credit_card" type="tel" id="credit_card" inputmode="numeric" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" onkeyup="addHyphen(this)" onblur="ValidateInput()"><p id="vCard"></p></th>
+                    </tr>
+                    <tr>
+                      <th>Expiration Date: <input name="exp_date" type="number" id="exp_date" placeholder="mm/yyyy" required></th>
                     </tr>
                   </table>
                   
 
-                  <li><b>item_1</b>: <input name="item_1" type="checkbox" id="item_1"/><br></li>
+                  <!--li><b>item_1</b>: <input name="item_1" type="checkbox" id="item_1"/><br></li>
                   <li><label for="apr" id="apr_error"></label><br></li>
 
                   <li><b>item_2</b>: <input name="item_2" type="checkbox" id="item_2"/><br></li>
@@ -170,12 +154,12 @@
                   <li><label for="apr" id="apr_error"></label><br></li>
 
                   <li><b>item_4</b>: <input name="item_4" type="checkbox" id="item_4"/><br></li>
-                  <li><label for="apr" id="apr_error"></label><br></li>
+                  <li><label for="apr" id="apr_error"></label><br></li-->
               </ul>
             </div>
           </div>
           <div>
-            <button type="button" id="calculate" class="i-s-button i-hover-glow">Submit</button>
+            <button type="button" id="submit" class="i-s-button i-hover-glow">Submit</button>
             <button type="button" id="clear" class="i-s-button i-hover-glow">Reset</button>
             <div>
               <p id="display_reciptes"></p>
@@ -188,5 +172,6 @@
     </section>
   </div>
 </section>
+<script src="../jquery-3.6.0.min.js"></script>
 </body>
 </html>
