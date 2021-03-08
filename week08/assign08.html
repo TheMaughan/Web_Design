@@ -122,7 +122,7 @@
                     </div>
                     <div>
                       <li><label for="phone" id="phone_label">Phone Number</label></li>
-                      <li><input name="phone" type="tel" inputmode="numeric" id="phone" maxlength="10" placeholder="123-456-7890" onkeyup="phoneHyphen(this)" onblur="ValidateInput()"><br></li>
+                      <li><input name="phone" type="tel" inputmode="numeric" id="phone" maxlength="10" placeholder="123-456-7890" onkeyup="phoneHyphen(this)" onchange="ValidateInput()"><br></li>
                     </div>
                   </div>
                   <table>
@@ -136,7 +136,7 @@
                   </table>
                   <table>
                     <tr>
-                      <th>Credit Card Number: <input name="credit_card" type="tel" id="credit_card" inputmode="numeric" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" onkeyup="addHyphen(this)" onblur="ValidateInput()"><p id="vCard"></p></th>
+                      <th>Credit Card Number: <input name="credit_card" type="tel" id="credit_card" inputmode="numeric" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" onkeyup="addHyphen(this)"><p id="vCard"></p></th>
                     </tr>
                     <tr>
                       <th>Expiration Date: <input name="exp_date" type="number" id="exp_date" placeholder="mm/yyyy" required></th>

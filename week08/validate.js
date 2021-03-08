@@ -182,17 +182,24 @@ function phoneHyphen(f){
   f.value = f_val.slice(0,3)+"-"+f_val.slice(3,6)+"-"+f_val.slice(6);
 }*/
 
-function phoneHyphen(slash){
+function phoneHyphen(phone){
   //let s = 
-  var date = document.getElementById(slash.id).value;
-  date = date.toString().replace("(\\d{3})(\\d{3})(\\d+)", "($1) $2-$3");
-  document.getElementById(slash.id).value = date;
+  //var date = document.getElementById(slash.id).value;
+  phone_val = phone.value.replace("(\\d{3})(\\d{3})(\\d+)", "($1) $2-$3");
+  //document.getElementById(slash.id).value = date;
 }
 
 document.addEventListener('DOMContentLoaded', ()=>{ //Listen for events after page loads:
-    
-  document.getElementById('submit').addEventListener('click', submit);// Listen for mouse click
-  document.getElementById('clear').addEventListener('click', clear);// Listen for mouse click  
-  //document.getElementById('last_name').addEventListener('keyup', update);// Listen for key release
+  // Form button
+  document.getElementById('submit').addEventListener('click', submit);// Listen for mouse click button
+  document.getElementById('clear').addEventListener('click', clear);// Listen for mouse click button
+  //Credit Card radio:
+  document.getElementById('visa').addEventListener('click', ValidateInput);// Radio Button 'click'
+  document.getElementById('master').addEventListener('click', ValidateInput);// Radio Button 'click'
+  document.getElementById('discover').addEventListener('click', ValidateInput);// Radio Button 'click'
+  document.getElementById('americaExpress').addEventListener('click', ValidateInput);// Radio Button 'click'
+  // Input onkeyup:
+  document.getElementById('credit_card').addEventListener('onkeyup', ValidateInput);// input update 'onkeyup'
+
   //document.getElementById('add_1').addEventListener('keyup', update);// Listen for key release
 });
