@@ -105,16 +105,16 @@ const clear = (ev)=>{// When mouse clicks on 'clear' button:
 
 
 
-function ValidateInput() {
+const ValidateInput = (ev)=>{
 
   var ccNum = document.getElementById('credit_card').value;
-  var phone_in = document.getElementById('phone').value;
+  
   //var visaRegEx = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
   //var mastercardRegEx = /^(?:5[1-5][0-9]{14})$/;
   //var amexpRegEx = /^(?:3[47][0-9]{13})$/;
   //var discovRegEx = /^(?:6(?:011|5[0-9][0-9])[0-9]{12})$/;
   var testing = /^\d{4}-\d{4}-\d{4}-\d{4}$/; // Auto hyphen works, the other cards are to complex...
-  var pho = /^\d{3}-\d{3}-\d{4}/;
+  
   var isValid = false;
 
   var v_select = document.getElementById('visa').checked;
@@ -140,24 +140,14 @@ function ValidateInput() {
     document.getElementById('validate').style.textShadow = '0px 0px 10px green';
     document.getElementById('validate').innerHTML = "Valid American Express Card Number";
   } else if(v_select == false || m_select == false || d_select == false || a_select == false){
+    isValid = false
     document.getElementById('validate').innerHTML = "Select Your Credit Card Type";
     document.getElementById('validate').style.textShadow = '0px 0px 10px red';
-  }
-  //Validate Phone Input
-  if(pho.test(phone_in)){
-    document.getElementById('validate').style.textShadow = '0px 0px 10px red';
-    document.getElementById('validate').innerHTML = "Enter a Valid Phone Number = ###-###-####";
   } else {
-    document.getElementById('validate').style.textShadow = '0px 0px 10px green';
-    document.getElementById('validate').innerHTML = "Phone Number Accepted";
+    document.getElementById('validate').innerHTML = "";
+    document.getElementById('validate').style.textShadow = 'none';
   }
-  /* else if(testing.test(ccNum) && t_select) {
-    isValid = true;
-    document.getElementById('validate').style.textShadow = '0px 0px 10px green';
-    document.getElementById('validate').innerHTML = "Card Input Testing with a positive number";
-  }*/
-
-
+  
   if(isValid) {
     document.getElementById('vCard').innerHTML = "Card Accepted";
     document.getElementById('vCard').style.textShadow = '0px 0px 10px green';
@@ -166,7 +156,30 @@ function ValidateInput() {
     document.getElementById('vCard').style.textShadow = '0px 0px 10px red';
     document.getElementById('credit_card').focus();
   }
+
 }
+const validatePhone = (ev)=>{
+  var phone_in = document.getElementById('phone').value;
+  var pho = /^\d{3}-\d{3}-\d{4}/; //Cannot get auto hyphen to work
+  //Validate Phone Input
+  if(pho.test(phone_in)){
+    document.getElementById('validate').style.textShadow = '0px 0px 10px red';
+    document.getElementById('validate').innerHTML = "Enter a Valid Phone Number = ###-###-####";
+    document.getElementById('phone').focus();
+  } else {
+    document.getElementById('validate').style.textShadow = '0px 0px 10px green';
+    document.getElementById('validate').innerHTML = "Phone Number Accepted";
+  }
+}
+  
+  /* else if(testing.test(ccNum) && t_select) {
+    isValid = true;
+    document.getElementById('validate').style.textShadow = '0px 0px 10px green';
+    document.getElementById('validate').innerHTML = "Card Input Testing with a positive number";
+  }*/
+
+
+  
 
 //For Credit Card, Live update on input... to bad I couldn't get this to work for the phone number.
 function addHyphen(element) { // Add Hyphen if 'test' is selected
@@ -181,13 +194,13 @@ function phoneHyphen(f){
   f_val = f.value.replace(/\D[^\.]/g, "");
   f.value = f_val.slice(0,3)+"-"+f_val.slice(3,6)+"-"+f_val.slice(6);
 }*/
-
+/*
 function phoneHyphen(phone){
   //let s = 
-  //var date = document.getElementById(slash.id).value;
-  phone_val = phone.value.replace("(\\d{3})(\\d{3})(\\d+)", "($1) $2-$3");
-  //document.getElementById(slash.id).value = date;
-}
+  let phone_val = document.getElementById(phone.id).value.replace("(\\d{3})(\\d{3})(\\d+)", "($1) $2-$3");
+  //let phone_val = phone.value.replace("(\\d{3})(\\d{3})(\\d{4})", "($1) $2-$3");
+  document.getElementById(phone.id).value = phone_val;
+}*/
 
 document.addEventListener('DOMContentLoaded', ()=>{ //Listen for events after page loads:
   // Form button
@@ -199,7 +212,9 @@ document.addEventListener('DOMContentLoaded', ()=>{ //Listen for events after pa
   document.getElementById('discover').addEventListener('click', ValidateInput);// Radio Button 'click'
   document.getElementById('americaExpress').addEventListener('click', ValidateInput);// Radio Button 'click'
   // Input onkeyup:
-  document.getElementById('credit_card').addEventListener('onkeyup', ValidateInput);// input update 'onkeyup'
+  document.getElementById('credit_card').addEventListener('onblur', ValidateInput);// input update 'onkeyup'
 
+  // Blur:
+  document.getElementById('phone').addEventListener('onblur', validatePhone);// input update 'onblur'
   //document.getElementById('add_1').addEventListener('keyup', update);// Listen for key release
 });
