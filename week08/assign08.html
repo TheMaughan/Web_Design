@@ -99,22 +99,24 @@
       <div class="no-bull" id="market">
         <h2>Market Items:</h2>
         <ul>
-          <li><b>Sword</b>: <input name="item_1" type="checkbox" id="item_1"/><br></li>
-          <li><label for="item_1" id="dis1"></label><br></li>
+          <li><b>Sword</b>: <input name="item_1" type="checkbox" onclick="addTotal(1)" id="item_1"/><br></li>
+          <li><label for="item_1" id="dis1">value="1200.50"</label><br></li>
 
-          <li><b>Shield</b>: <input name="item_2" type="checkbox" id="item_2"/><br></li>
-          <li><label for="item_2" id="dis2"></label><br></li>
+          <li><b>Shield</b>: <input name="item_2" type="checkbox" onclick="addTotal(2)" id="item_2"/><br></li>
+          <li><label for="item_2" id="dis2">value="2243.75"</label><br></li>
 
-          <li><b>Wizard Staff</b>: <input name="item_3" type="checkbox" id="item_3"/><br></li>
-          <li><label for="item_3" id="dis3"></label><br></li>
+          <li><b>Wizard Staff</b>: <input name="item_3" type="checkbox" onclick="addTotal(3)" id="item_3"/><br></li>
+          <li><label for="item_3" id="dis3">value="324200.00"</label><br></li>
 
-          <li><b>The One Ring</b>: <input name="item_4" type="checkbox" id="item_4"/><br></li>
-          <li><label for="item_4" id="dis4"></label><br></li>
-          <div>
-            <p id="display_reciptes"></p>
-            <ul class="no-bull" id="total"></ul>
-          </div>
+          <li><b>The One Ring</b>: <input name="item_4" type="checkbox" onclick="addTotal(4)" id="item_4"/><br></li> 
+          <li><label for="item_4" id="dis4">value="1000000000.00"</label><br></li>
+          <li><p id="display_reciptes"></p></li>
+          <li><p id="total"></p></li>
         </ul>
+        <div>
+          
+        </div>
+        <script src="receipt.js"></script>
       </div>
     <!-- This section is for the assignment: -->
       <form name="market_payment" id="market_payment">
