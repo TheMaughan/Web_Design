@@ -10,9 +10,6 @@ const submit = (ev)=>{
   pho = phone.value;
   card = credit_card.value;
   date = exp_date.value;
-
-
-
     
   // Doing the Math:
     
@@ -60,18 +57,6 @@ const submit = (ev)=>{
     document.getElementById('credit_card').style.boxShadow = 'none';
     document.getElementById('exp_date').style.boxShadow = 'none';
   }
-    
-    /*} else if (payment == null || isNaN(payment) || payment == " "){
-        document.getElementById('payment').innerHTML = "Calculation output, recheck your numbers, no letters allowed";
-        document.getElementById('payment').style.textShadow = '0px 0px 10px red';
-    } else {
-        //\B looks for a word boundary, ? says what to look for, \d looks for 3 digits in a row:
-        payment = payment.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        document.getElementById('payment').innerHTML = `Monthly Payment = $${payment}`
-        document.getElementById('payment').style.textShadow = 'none';
-    }*/
-    
-    
 }
 
 const clear = (ev)=>{// When mouse clicks on 'clear' button:
@@ -86,13 +71,41 @@ const clear = (ev)=>{// When mouse clicks on 'clear' button:
     document.getElementById('validate').innerHTML = "";
     //valid.removeChild(valid.firstChild);
   }
+  const vPhone = document.getElementById("vPhone");
+  while (vPhone.hasChildNodes()) {
+    document.getElementById('vPhone').innerHTML = "";
+    //valid.removeChild(valid.firstChild);
+  }
+  const phone_output = document.getElementById("phone_output");
+  while (phone_output.hasChildNodes()) {
+    document.getElementById('phone_output').innerHTML = "";
+    //valid.removeChild(valid.firstChild);
+  }
   const v_card = document.getElementById("vCard");
   while (v_card.hasChildNodes()) {
     document.getElementById('vCard').innerHTML = "";
     //valid.removeChild(valid.firstChild);
   }
+  const v2card = document.getElementById("v2Card");
+  while (v2card.hasChildNodes()) {
+    document.getElementById('v2Card').innerHTML = "";
+    //valid.removeChild(valid.firstChild);
+  }
+  const vDate = document.getElementById("vDate");
+  while (vDate.hasChildNodes()) {
+    document.getElementById('vDate').innerHTML = "";
+    //valid.removeChild(valid.firstChild);
+  }
 
-    /*
+  document.getElementById('validate').style.textShadow = 'none';
+  //clear input box shadows:
+  document.getElementById('first_name').style.boxShadow = 'none';
+  document.getElementById('last_name').style.boxShadow = 'none';
+  document.getElementById('address').style.boxShadow = 'none';
+  document.getElementById('phone').style.boxShadow = 'none';
+  document.getElementById('credit_card').style.boxShadow = 'none';
+  document.getElementById('exp_date').style.boxShadow = 'none';
+  /*
     while (.hasChildNodes()) {
         .removeChild(.firstChild);
         //document.getElementById('first_name').inputField.value = " ";
@@ -102,18 +115,57 @@ const clear = (ev)=>{// When mouse clicks on 'clear' button:
   document.getElementById("first_name").focus(); // put cursor inside first_name input Field
 };
 
+// Validate Phone input:
+const validatePhone = ()=>{
+  let phone_in = document.getElementById('phone').value;
 
+  const pho = /(\d{3})(-)(\d{3}-\d{4})/y; //This Regex used to Reorganize the string groups.
+  const patt = /^\d{3}-\d{3}-\d{4}$/y; //This Regex used to check the current pattern
+  const sub = `1 ($1) $3`; // Set Pointers groups and inserts:
+  const output = phone_in.replace(pho, sub) // Rewrite the string with set pointers and inserts:
 
+  //Validate Phone Input:
+  if(patt.test(phone_in)){
+    document.getElementById('vPhone').style.textShadow = '0px 0px 10px green';
+    document.getElementById('vPhone').innerHTML = "Phone Number Accepted";
+    document.getElementById('phone_output').style.textShadow = '0px 0px 10px green';
+    document.getElementById('phone_output').innerHTML = output; // Output the reorganized string:
+  } else {
+    document.getElementById('vPhone').style.textShadow = '0px 0px 10px red';
+    document.getElementById('vPhone').innerHTML = "Enter a Valid 10 diget Phone Numbe";
+    document.getElementById('phone_output').style.textShadow = '0px 0px 10px yellow';
+    document.getElementById('phone_output').innerHTML = "NOTE: Phone number input will auto format"
+    document.getElementById('phone').focus();
+  }
+  
+}
+// Auto Format Phone input:
+function phoneHyphen(element) { // Add Hyphen to string
+  let ele = document.getElementById(element.id);
+    ele = ele.value.split('-').join(''); // Remove dash (-) if string doesn't match pattern.
 
+    const patt = /(\d{3})(\d{3})(\d{4})/y; // Group the 10 diget number:
+    const subst = `$1-$2-$3`; // Set pointer groups
+    const result = ele.replace(patt, subst); // rewirite the user input with dashes
+    document.getElementById(element.id).value = result; // display the new string
+}
+
+// Credit Card Validation:
 const ValidateInput = (ev)=>{
 
-  var ccNum = document.getElementById('credit_card').value;
-  
-  //var visaRegEx = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
-  //var mastercardRegEx = /^(?:5[1-5][0-9]{14})$/;
-  //var amexpRegEx = /^(?:3[47][0-9]{13})$/;
-  //var discovRegEx = /^(?:6(?:011|5[0-9][0-9])[0-9]{12})$/;
-  var testing = /^\d{4}-\d{4}-\d{4}-\d{4}$/; // Auto hyphen works, the other cards are to complex...
+  //I'm gonna do this part later... Credit Cards are complex!
+  //const visaRegEx = /^(?:[4]{1})([0-9]{3})([0-9]{4})([0-9]{4})([0-9]{4})((?:[0-9]{3})?)$/y;
+  //const visaDash = `4$1-$2-$3-$4`
+  //const mastercardRegEx = /^(?:[5])([1-5])([0-9]{2})([0-9]{4})([0-9]{4})([0-9]{4})$/y;
+  //const masterDash = `5$1$2-$3-$4-$5`
+  //const amexpRegEx = /^([3])([47])(\d{2})(\d{6})(\d{5})$/y;// 4, 6, 5 grouping
+  //const ameDash = `$1$2$3-$4-$5`;
+  //const discovRegEx = /^(?:6(?:011|5[0-9][0-9])[0-9]{12})$/;
+  //const discDash = ``;
+
+  let ccNum = document.getElementById('credit_card').value;
+
+  const testing = /^\d{4}-\d{4}-\d{4}-\d{4}$/; // Auto hyphen works, the other cards are to complex...
   
   var isValid = false;
 
@@ -122,99 +174,105 @@ const ValidateInput = (ev)=>{
   var d_select = document.getElementById('discover').checked;
   var a_select = document.getElementById('americaExpress').checked;
   // var t_select = document.getElementById('test').checked;
-
-  if (testing.test(ccNum) && v_select) {
-    isValid = true;
-    document.getElementById('validate').style.textShadow = '0px 0px 10px green';
-    document.getElementById('validate').innerHTML = "Valid Visa Card Number";
-  } else if(testing.test(ccNum) && m_select) {
-    isValid = true;
-    document.getElementById('validate').style.textShadow = '0px 0px 10px green';
-    document.getElementById('validate').innerHTML = "Valid Master Card Number";
-  } else if(testing.test(ccNum) && d_select) {
-    isValid = true;
-    document.getElementById('validate').style.textShadow = '0px 0px 10px green';
-    document.getElementById('validate').innerHTML = "Valid Discover Card Number";
-  } else if(testing.test(ccNum) && a_select) {
-    isValid = true;
-    document.getElementById('validate').style.textShadow = '0px 0px 10px green';
-    document.getElementById('validate').innerHTML = "Valid American Express Card Number";
-  } else if(v_select == false || m_select == false || d_select == false || a_select == false){
-    isValid = false
-    document.getElementById('validate').innerHTML = "Select Your Credit Card Type";
-    document.getElementById('validate').style.textShadow = '0px 0px 10px red';
+  if (v_select){
+    document.getElementById('vCard').style.textShadow = '0px 0px 10px green';
+    document.getElementById('vCard').innerHTML = "Visa Card";
+    if (testing.test(ccNum)) {
+      isValid = true;
+    }
+  } else if (m_select) {
+    document.getElementById('vCard').style.textShadow = '0px 0px 10px green';
+    document.getElementById('vCard').innerHTML = "Master Card";
+    if(testing.test(ccNum)) {
+      isValid = true;
+    }
+  } else if(d_select) {
+    document.getElementById('vCard').style.textShadow = '0px 0px 10px green';
+    document.getElementById('vCard').innerHTML = "Discover Card";
+    if (testing.test(ccNum)) {
+      isValid = true;
+    }
+  } else if(a_select) {
+    document.getElementById('vCard').style.textShadow = '0px 0px 10px green';
+    document.getElementById('vCard').innerHTML = "American Express Card";
+    if (testing.test(ccNum)){
+      isValid = true;
+    } 
+  } else if (v_select == false || m_select == false || d_select == false || a_select == false){
+      isValid = false
+      document.getElementById('vCard').innerHTML = "Select Your Credit Card Carrier";
+      document.getElementById('vCard').style.textShadow = '0px 0px 10px red';
   } else {
-    document.getElementById('validate').innerHTML = "";
-    document.getElementById('validate').style.textShadow = 'none';
+      document.getElementById('vCard').innerHTML = "";
+      document.getElementById('vCard').style.textShadow = 'none';
   }
   
   if(isValid) {
-    document.getElementById('vCard').innerHTML = "Card Accepted";
-    document.getElementById('vCard').style.textShadow = '0px 0px 10px green';
+    document.getElementById('v2Card').innerHTML = "Card Number is valid";
+    document.getElementById('v2Card').style.textShadow = '0px 0px 10px green';
   } else {
-    document.getElementById('vCard').innerHTML = "Card Denied";
-    document.getElementById('vCard').style.textShadow = '0px 0px 10px red';
+    document.getElementById('v2Card').innerHTML = "Card Number is invalid";
+    document.getElementById('v2Card').style.textShadow = '0px 0px 10px red';
     document.getElementById('credit_card').focus();
   }
 
 }
-const validatePhone = (ev)=>{
-  var phone_in = document.getElementById('phone').value;
-  var pho = /^\d{3}-\d{3}-\d{4}/; //Cannot get auto hyphen to work
-  //Validate Phone Input
-  if(pho.test(phone_in)){
-    document.getElementById('validate').style.textShadow = '0px 0px 10px red';
-    document.getElementById('validate').innerHTML = "Enter a Valid Phone Number = ###-###-####";
-    document.getElementById('phone').focus();
-  } else {
-    document.getElementById('validate').style.textShadow = '0px 0px 10px green';
-    document.getElementById('validate').innerHTML = "Phone Number Accepted";
-  }
-}
-  
-  /* else if(testing.test(ccNum) && t_select) {
-    isValid = true;
-    document.getElementById('validate').style.textShadow = '0px 0px 10px green';
-    document.getElementById('validate').innerHTML = "Card Input Testing with a positive number";
-  }*/
-
-
-  
-
 //For Credit Card, Live update on input... to bad I couldn't get this to work for the phone number.
-function addHyphen(element) { // Add Hyphen if 'test' is selected
+function addHyphen(element) { // auto add Hyphen for Credit Card
   let ele = document.getElementById(element.id);
     ele = ele.value.split('-').join('');    // Remove dash (-) if mistakenly entered.
 
     let finalVal = ele.match(/.{1,4}/g).join('-');
     document.getElementById(element.id).value = finalVal;
 }
-/*
-function phoneHyphen(f){
-  f_val = f.value.replace(/\D[^\.]/g, "");
-  f.value = f_val.slice(0,3)+"-"+f_val.slice(3,6)+"-"+f_val.slice(6);
-}*/
-/*
-function phoneHyphen(phone){
-  //let s = 
-  let phone_val = document.getElementById(phone.id).value.replace("(\\d{3})(\\d{3})(\\d+)", "($1) $2-$3");
-  //let phone_val = phone.value.replace("(\\d{3})(\\d{3})(\\d{4})", "($1) $2-$3");
-  document.getElementById(phone.id).value = phone_val;
-}*/
+// Validate & auto format exp_date:
+function addForSlash(element) { // Add forward slash to date:
+  let elem = document.getElementById(element.id);
+    ele = elem.value.split('/').join('');    // Remove dash (-) if mistakenly entered.
 
-document.addEventListener('DOMContentLoaded', ()=>{ //Listen for events after page loads:
+  const patt = /(\d{2})(\d{4})/y;
+  const subst = `$1/$2`;
+  const result = ele.replace(patt, subst);
+  document.getElementById(element.id).value = result;
+
+  strArray = elem.value.split('/');
+  if (strArray[1] < 2021 && strArray[0] < 04){
+    document.getElementById('exp_date').style.boxShadow = '0px 0px 5px red inset';
+    document.getElementById('vDate').style.textShadow = '0px 0px 10px red';
+    document.getElementById('vDate').innerHTML = "The card is expired";
+    document.getElementById('exp_date').focus;
+  } else if (strArray[0] < 0 || strArray[0] > 13){
+    document.getElementById('exp_date').style.boxShadow = '0px 0px 5px red inset';
+    document.getElementById('vDate').style.textShadow = '0px 0px 10px red';
+    document.getElementById('vDate').innerHTML = "Invalid Month";
+    document.getElementById('exp_date').focus;
+  } else if (strArray[0] > 0 && strArray[0] < 13 && strArray[1] >= 2021){
+    document.getElementById('exp_date').style.boxShadow = '0px 0px 10px green inset';
+    document.getElementById('vDate').style.textShadow = '0px 0px 10px green';
+    document.getElementById('vDate').innerHTML = "Expiration Date is Valid";
+    document.getElementById('exp_date').focus;
+  } else {
+    document.getElementById('exp_date').style.boxShadow = '0px 0px 10px red inset';
+    document.getElementById('vDate').style.textShadow = '0px 0px 10px red';
+    document.getElementById('vDate').innerHTML = "Invalid Expiration Date";
+  }
+
+    //document.getElementById('vDate').innerHTML = strArray[0];
+}
+
+// I'm using at least 3 event listeners: 'DOMContentLoaded' = Listen for Load, 
+                                        //'click' = Listen for mouse Click,
+                                        //'keyup' = listen for Change after key release.
+document.addEventListener('DOMContentLoaded', ()=>{ //Listen for the following events after page loads:
   // Form button
   document.getElementById('submit').addEventListener('click', submit);// Listen for mouse click button
   document.getElementById('clear').addEventListener('click', clear);// Listen for mouse click button
-  //Credit Card radio:
+  // Credit Card radio:
   document.getElementById('visa').addEventListener('click', ValidateInput);// Radio Button 'click'
   document.getElementById('master').addEventListener('click', ValidateInput);// Radio Button 'click'
   document.getElementById('discover').addEventListener('click', ValidateInput);// Radio Button 'click'
   document.getElementById('americaExpress').addEventListener('click', ValidateInput);// Radio Button 'click'
   // Input onkeyup:
-  document.getElementById('credit_card').addEventListener('onblur', ValidateInput);// input update 'onkeyup'
-
-  // Blur:
-  document.getElementById('phone').addEventListener('onblur', validatePhone);// input update 'onblur'
-  //document.getElementById('add_1').addEventListener('keyup', update);// Listen for key release
+  document.getElementById('credit_card').addEventListener('keyup', ValidateInput);// update when the user releases a key
+  document.getElementById('phone').addEventListener('keyup', validatePhone);// update when the user releases a key
 });

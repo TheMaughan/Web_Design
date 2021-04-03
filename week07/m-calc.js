@@ -42,9 +42,7 @@ const calculate = (ev)=>{
         payment = payment.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         document.getElementById('payment').innerHTML = `Monthly Payment = $${payment}`
         document.getElementById('payment').style.textShadow = 'none';
-    }
-    
-    
+    }   
 }
 
 const clear = (ev)=>{// When mouse clicks on 'clear' button:
