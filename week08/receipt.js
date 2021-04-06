@@ -6,18 +6,17 @@ function addTotal(item){
   let i_4 = 1000000000.00;
 
 
-
   let addItems = 0;
 
   switch(item){
-    case 1 : document.getElementById('total').innerHTML = 'item_1'; break;//addItems + i_1;
-    case 2 : document.getElementById('total').innerHTML = 'item_1'; break;
-    case 3 : document.getElementById('total').innerHTML = 'item_1'; break;
-    case 4 : document.getElementById('total').innerHTML = 'item_1'; break;
+    case 1 : document.getElementById('total').innerHTML = '$'+ addItems + i_1; break;//addItems + i_1;
+    case 2 : document.getElementById('total').innerHTML = '$'+ addItems + i_2; break;
+    case 3 : document.getElementById('total').innerHTML = '$'+ addItems + i_3; break;
+    case 4 : document.getElementById('total').innerHTML = '$'+ addItems + i_4; break;
     default : document.getElementById('total').innerHTML = '$0.00';
   }
 
-  document.getElementById('total').innerHTML = '$' + addItems;
+  //document.getElementById('total').innerHTML = '$' + addItems;
 
   //let total = document.getElementById('total').innerHTML = '$' + currentTotal;
   //document.getElementById('item_2').value;
