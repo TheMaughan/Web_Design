@@ -10,8 +10,9 @@ const submit = (ev)=>{
   pho = phone.value;
   card = credit_card.value;
   date = exp_date.value;
-    
-  // Doing the Math:
+  
+  //valid form?
+  //var marketForm = false;
     
 
   if (fn.trim() == ''){
@@ -56,15 +57,20 @@ const submit = (ev)=>{
     document.getElementById('phone').style.boxShadow = 'none';
     document.getElementById('credit_card').style.boxShadow = 'none';
     document.getElementById('exp_date').style.boxShadow = 'none';
+
+    document.getElementById('total').innerHTML = 'Payment Submitted!';
+
+    //marketForm = true;
   }
 }
 
 const clear = (ev)=>{// When mouse clicks on 'clear' button:
   ev.preventDefault();
   //reset all user input using jquery:
-  $('#morgage_calculator')[0].reset();
+  $('#market_payment')[0].reset();
   $(':input').val('');
   $('#item').removeClass('');
+  $('input[type=checkbox]').prop('checked',false);
   //clear validate notifications
   const valid = document.getElementById("validate");
   while (valid.hasChildNodes()) {
@@ -96,6 +102,11 @@ const clear = (ev)=>{// When mouse clicks on 'clear' button:
     document.getElementById('vDate').innerHTML = "";
     //valid.removeChild(valid.firstChild);
   }
+  const total = document.getElementById("total");
+  while (total.hasChildNodes()) {
+    document.getElementById('total').innerHTML = "";
+    //valid.removeChild(valid.firstChild);
+  }
 
   document.getElementById('validate').style.textShadow = 'none';
   //clear input box shadows:
@@ -114,6 +125,20 @@ const clear = (ev)=>{// When mouse clicks on 'clear' button:
     //document.forms[0].reset();
   document.getElementById("first_name").focus(); // put cursor inside first_name input Field
 };
+
+// add selection to Total:
+function addTotal(){
+
+  let inputs = document.getElementById('market_items').getElementsByTagName('input');
+  let addItems = 0;
+
+  for (var i = 0, num = inputs.length; i < num; i++) {
+    if (inputs[i].checked){
+      addItems += parseFloat(inputs[i].getAttribute('name'));
+    }
+  }
+  document.getElementById('total').innerHTML = '$'+ addItems.toFixed(2); 
+}
 
 // Validate Phone input:
 const validatePhone = ()=>{
