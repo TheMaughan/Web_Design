@@ -1,0 +1,56 @@
+ /* This Stylesheet is for Week 09 only */ 
+
+.middle {
+    /*background-image: url('../web-pictures/m-l-s_logo.jpg');*/
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, 0.9);
+    opacity: 0.9;
+    height: 700px;
+    color: white;
+  }
+  .footer {
+    text-align: center;
+    color: white;
+    height: 227px;
+  }
+  
+   /* The grid container */
+   #grid-container {
+      display: grid;
+      grid-template-areas: 
+        'header header header header header header' 
+        'left middle middle middle middle right' 
+        'footer footer footer footer footer';
+    } 
+  
+    input {
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      resize: none;
+      
+    }
+    .c-grid {
+      display: grid;
+      grid-template-areas: 
+        'top top top'
+        'L-side mid R-side'
+        'bottom bottom bottom';
+      border:rgba(47, 46, 92, 0.4);
+      justify-items: center;
+      text-align: center;
+      padding: 10px;
+      height: fit-content;
+    }
+    .no-bull {
+      list-style-type: none;
+    }
+  
+    textarea { 
+      width: 200px;
+      height:150px;
+      line-height:20px;
+      padding-top: 20px;
+      text-align: left;
+  }
